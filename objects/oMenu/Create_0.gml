@@ -28,11 +28,21 @@ enum menu_element_type{
     input 
 }
 
+enum MENUSTATE{
+	LAUNCHING,
+	CHOSING,
+	FADING,
+	FREE
+}
+
 enum MENUDRAW{
 	LAUNCHING,
 	CHOSING,
+	FADING,
+	FREE
 }
-state = MENUDRAW.CHOSING
+draw_state = MENUDRAW.CHOSING
+state = MENUSTATE.CHOSING;
 
 //CREATE MENU PAGES
 ds_menu_main = create_menu_page(
@@ -84,5 +94,5 @@ repeat(array_len){
 	menu_option[i] = 0;
 	i++
 }
-
+opacity = 1;
 inputting = false;

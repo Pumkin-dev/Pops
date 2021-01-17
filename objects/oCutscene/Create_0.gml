@@ -1,3 +1,9 @@
 /// @description Insérez la description ici
 // Vous pouvez écrire votre code dans cet éditeur
-cutscene = false;
+scene = CUTSCENE.FREE;
+
+enum CUTSCENE{
+	INTRO,
+	ACALL,
+	FREE
+}
