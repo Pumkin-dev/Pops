@@ -1,0 +1,71 @@
+title: Debut
+tags: 
+colorID: 0
+position: 1140,-50
+---
+<< if visited("Dormir") == true>>
+    Narrateur: C'est pas le moment de piquer un roupillon.
+    << stop>> 
+<< endif>> 
+<< if visited("PasFatigue")>>
+    Narrateur: Tu n'as pas compris ? Il est [speed, 0.1]vexé[/speed].
+    <<stop >> 
+<< endif>> 
+Narrateur: C'est là où tu t'es réveillé.
+Narrateur: Il n'a pas l'air très confortable...
+[[ J'aurais bien envie de piquer un somme...|Dormir]]
+[[ Je suis pas vraiment fatigué en soit. |PasFatigue]]
+===
+title: Dormir
+tags: 
+colorID: 0
+position: 1319,-350
+---
+Narrateur: T'as cru que tu pouvais te reposer ?
+Narrateur: Allez on se bouge. [delay, 500]Feignasse.
+Pops: D'accord...
+===
+title: PasFatigue
+tags: 
+colorID: 0
+position: 1537,-109
+---
+Pops: D'ailleurs pourquoi j'irais dormir dans un lit tout miteux ?
+Narrateur: Le lit est vexé.
+===
+title: Start
+tags: 
+colorID: 0
+position: 1520,250
+---
+<< if visited("Sleeping") == true>>
+    Narrateur: It's not time to take a nap.
+    << stop>>
+<< endif>>
+<< if visited("NotTired") == true>>
+    Narrateur: Didn't you get it? The bed is [speed, 0.1]upset[/speed].
+    << stop>>
+<< endif>> 
+Narrateur: It's where you woke up
+Narrateur: It doesn't look like very comfortable...
+
+[[ Sleeping in it wouldn't mind me... |Sleeping]] 
+[[ I'm not tired. |NotTired]]
+===
+title: Sleeping
+tags: 
+colorID: 0
+position: 1972,233
+---
+Narrateur: You thought you could sleep?
+Narrateur: Come on, move. [delay, 500]You slob.
+Pops: Ok...
+===
+title: NotTired
+tags: 
+colorID: 0
+position: 1855,-145
+---
+Pops(happy): Anyway, why would I sleep in this shabby bed?
+Narrateur: The bed is upset.
+===

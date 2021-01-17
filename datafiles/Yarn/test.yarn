@@ -1,0 +1,54 @@
+title: Start
+tags: 
+colorID: 2
+position: 806,306
+---
+[rainbow]Salut[/rainbow] bande de pute ceci est un [c_yellow]test[/color]
+je sais que c'est chiant mais va falloir faire comme ça
+
+[[Node1]]
+===
+title: Node1
+tags: 
+colorID: 0
+position: 920,81
+---
+Je vois que tu es arrivé ici
+Impressionnant 
+Mais tu ne vas pas pouvoir me battre comme ça ta mère la pute
+    
+[[ Et si j'ai envie ? |IlVaSeBattre]]
+[[ J'ai pas envie de me batté |PasEnvie]]
+===
+title: IlVaSeBattre
+tags: 
+colorID: 0
+position: 966,-204
+---
+T'es mort
+[[Final]]
+===
+title: PasEnvie
+tags: 
+colorID: 0
+position: 1294,44
+---
+[shake]Tu vas morfler mdr[/shake]
+[[Final]]
+===
+title: Final
+tags: 
+colorID: 0
+position: 1370,-255
+---
+Enfin bref tu aimes la verdure ?
+-> Mmmmh pas vraiment ?
+-> Oh oui j'adore ça !
+Ah attends j'entends quelque chose..
+<< if visited("IlVaSeBattre") == true>>
+    Oh ça vient de tes poings je crois
+<< else if visited("PasEnvie") == true>>
+    M. le peureux
+<< endif>> 
+Ah non je m'en fous
+===
