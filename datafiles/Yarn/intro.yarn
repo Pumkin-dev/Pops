@@ -1,7 +1,7 @@
 title: Start
 tags: 
 colorID: 0
-position: 1542,-191
+position: 1541,-192
 ---
 Narrateur: Pops, I know this isn't going good lately.
 << set local.zoom_width to global.view_width/2>> 
@@ -44,7 +44,11 @@ Narrateur: [shake]Come on![/shake]
 <<set local.zoom to 0>>
 <<StopSound>>
 Narrateur: POPS, WAKE UP
-<<set local._speed to 1>>
+<< set local._speed to 1>>
+<< set local._pitch to 1>> 
+<< set local.offset to 1>>
+<< set local.fxspeed to 1>>
+<<set local.zoom to 0.1>>
 ===
 title: Debut
 tags: 
@@ -84,8 +88,4 @@ Narrateur: [shake]Pops, ne me fais pas ça[/shake]
 Narrateur: [shake]Pas maintenant...[/shake]
 Narrateur: [shake]Allez ![/shake]
 Narrateur: [blink]POPS, RÉVEILLE TOI[/blink]
-<< set local._speed to 1>>
-<< set local._pitch to 1>> 
-<< set local.offset to 1>>
-<< set local.fxspeed to 1>>
 ===

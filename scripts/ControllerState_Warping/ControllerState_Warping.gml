@@ -53,6 +53,10 @@ function ControllerState_Warping(){
 			// Selon la salle on change les coordonées de warp et on va dans la salle dédié
 			switch (room)
 			{
+				case rm_menu:
+					room_goto(rm_hos_chambre_pops);
+					oCutscene.scene = CUTSCENE.FREE;
+					break;
 				case rm_hos_chambre_pops:
 					warp_x = 128;
 					warp_y = 574;

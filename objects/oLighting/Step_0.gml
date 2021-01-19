@@ -40,7 +40,7 @@ else
 	{
 		flicker_light = false;
 	}
-	if (!flicker_light && INVENTORY[? "flashlight"] == 1)
+	if (!flicker_light && ITEM[# item.flashlight, slot.get])
 	{
 		FlashLight();
 	}

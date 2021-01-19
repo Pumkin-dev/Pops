@@ -10,7 +10,7 @@ if (!walk)
 	if (front && spr_cycle < 3)
 	{
 		
-		if (INVENTORY[? "flashlight"] == 1)
+		if (ITEM[# item.flashlight, slot.get] )
 		{
 			sprite_index = spr_front_flight;
 		}
@@ -21,7 +21,7 @@ if (!walk)
 	}
 	else if (front && spr_cycle == 3)
 	{
-		if (INVENTORY[? "flashlight"] == 1)
+		if (ITEM[# item.flashlight, slot.get] )
 		{
 			sprite_index = spr_front_wink_flight;
 		}
@@ -32,7 +32,7 @@ if (!walk)
 	}
 	else if (back)
 	{
-		if (INVENTORY[? "flashlight"] == 1)
+		if (ITEM[# item.flashlight, slot.get] )
 		{
 			sprite_index = spr_back_flight;
 		}
@@ -43,7 +43,7 @@ if (!walk)
 	}
 	else if (left && spr_cycle < 3)
 	{
-		if (INVENTORY[? "flashlight"] == 1)
+		if (ITEM[# item.flashlight, slot.get] )
 		{
 			sprite_index = spr_left_flight;
 		}
@@ -54,7 +54,7 @@ if (!walk)
 	}
 	else if (left && spr_cycle == 3)
 	{
-		if (INVENTORY[? "flashlight"] == 1)
+		if (ITEM[# item.flashlight, slot.get] )
 		{
 			sprite_index = spr_left_wink_flight;
 		}
@@ -65,7 +65,7 @@ if (!walk)
 	}
 	else if (right && spr_cycle < 3)
 	{
-		if (INVENTORY[? "flashlight"] == 1)
+		if (ITEM[# item.flashlight, slot.get] )
 		{
 			sprite_index = spr_right_flight;
 		}
@@ -76,7 +76,7 @@ if (!walk)
 	}
 	else if (right && spr_cycle == 3)
 	{
-		if (INVENTORY[? "flashlight"] == 1)
+		if (ITEM[# item.flashlight, slot.get] )
 		{
 			sprite_index = spr_right_wink_flight
 		}
@@ -91,7 +91,7 @@ else
 {
 	if (front && spr_cycle < 3)
 	{
-		if (INVENTORY[? "flashlight"] == 1)
+		if (ITEM[# item.flashlight, slot.get] )
 		{
 			sprite_index = spr_front_walk_flight;
 		}
@@ -102,7 +102,7 @@ else
 	}
 	else if (front && spr_cycle == 3)
 	{
-		if (INVENTORY[? "flashlight"] == 1)
+		if (ITEM[# item.flashlight, slot.get] )
 		{
 			sprite_index = spr_front_walk_wink_flight;
 		}
@@ -113,7 +113,7 @@ else
 	}
 	else if (back)
 	{
-		if (INVENTORY[? "flashlight"] == 1)
+		if (ITEM[# item.flashlight, slot.get])
 		{
 			sprite_index = spr_back_walk_flight;
 		}
@@ -124,7 +124,7 @@ else
 	}
 	else if (left && spr_cycle < 3)
 	{
-		if (INVENTORY[? "flashlight"] == 1)
+		if (ITEM[# item.flashlight, slot.get] )
 		{
 			sprite_index = spr_left_walk_flight;
 		}
@@ -135,7 +135,7 @@ else
 	}
 	else if (left && spr_cycle == 3)
 	{
-		if (INVENTORY[? "flashlight"] == 1)
+		if (ITEM[# item.flashlight, slot.get] )
 		{
 			sprite_index = spr_left_walk_wink_flight;
 		}
@@ -146,7 +146,7 @@ else
 	}
 	else if (right && spr_cycle < 3)
 	{
-		if (INVENTORY[? "flashlight"] == 1)
+		if (ITEM[# item.flashlight, slot.get] )
 		{
 			sprite_index = spr_right_walk_flight;
 		}
@@ -157,7 +157,7 @@ else
 	}
 	else if (right && spr_cycle == 3)
 	{
-		if (INVENTORY[? "flashlight"] == 1)
+		if (ITEM[# item.flashlight, slot.get] )
 		{
 			sprite_index = spr_right_walk_wink_flight;
 		}

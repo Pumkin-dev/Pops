@@ -50,7 +50,7 @@ function Fading(duration, wichfade){
 /// @param {index} parent_object l'objet auquel appliquer le fading
 
 function Fadingout(duration, color, wait, event, parent_object){
-	if (!instance_exists(oFadingout) || !instance_exists(oFadingoutWhite))
+	if (!instance_exists(oFadingout) && !instance_exists(oFadingoutWhite))
 	{
 		switch (color)
 		{
@@ -90,7 +90,7 @@ function Fadingout(duration, color, wait, event, parent_object){
 
 
 function Fadingin(duration, color, wait, event, parent_object){
-	if (!instance_exists(oFadingin) || !instance_exists(oFadinginWhite))
+	if (!instance_exists(oFadingin) && !instance_exists(oFadinginWhite))
 	{
 		switch (color)
 		{

@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-if (INVENTORY[? "flashlight"] == 1)
+if (ITEM[# item.flashlight, 3])
 {
 	if (front)
 	{

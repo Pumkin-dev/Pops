@@ -5,10 +5,6 @@ delta = (delta_time/1000000)*room_speed;
 switch (room)
 {
 	case rm_hos_chambre_pops:
-		if (!audio_is_playing(mus_hospital))
-		{
-			audio_play_sound(mus_hospital, true, true);
-		}
 		break;
 }
 

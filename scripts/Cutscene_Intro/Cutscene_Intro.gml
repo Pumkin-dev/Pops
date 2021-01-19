@@ -10,12 +10,15 @@ function Cutscene_Intro(){
 	{
 		if (oSprIntro.sprite_index != sprIntroEyes)
 		{
+			if (!audio_is_playing(snd_flatline))
+			{
+				audio_play_sound(snd_flatline, false, false);
+			}
 			with (oSprIntro)
 			{
 				sprite_index = sprIntroEyes;
 				image_index = 0;
 			}
-			exit;
 		}
 	}
 }
