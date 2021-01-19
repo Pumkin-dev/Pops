@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "menustate_scripts",
+    "path": "folders/Scripts/menu_scripts/menustate_scripts.yy",
   },
   "resourceVersion": "1.0",
   "name": "MenuState_Fading",

@@ -45,7 +45,6 @@ function wichemotion(line)
 	{
 		var emotion = string_delete(speaker, char_clos_bracket, 1);
 		var emotion = string_delete(emotion, 1, char_op_bracket);
-		show_debug_message(emotion)
 		return emotion;
 	}
 	else {return undefined}

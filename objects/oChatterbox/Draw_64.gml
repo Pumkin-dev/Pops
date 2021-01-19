@@ -8,5 +8,8 @@ switch (draw)
 	case CHATTERBOXDRAW.INTERACTING:
 		ChatterboxDraw_Interacting();
 		break;
+	case CHATTERBOXDRAW.CUTSCENE:
+		ChatterboxDraw_Cutscene();
+		break;
 
 }

@@ -8,3 +8,4 @@ switch (scene)
 	case CUTSCENE.FREE:
 	default:
 		break;
+}

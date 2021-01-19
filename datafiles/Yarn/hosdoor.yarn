@@ -6,13 +6,22 @@ position: 1593,-140
 Narrateur: Tu essaies d'ouvrir la porte sans succès.
 Narrateur: Un panneau est accroché à la porte.
 Narrateur: "N°101".
+<< if local._room == "rm_hos_couloir" & local._x <= 400>> 
+    Narrateur: "N°101".
+<< elseif local._room == "rm_hos_couloir" & local._x >= 400>> 
+    Narrateur: "N°102".
+<< endif>>
 ===
 title: Start
 tags: 
 colorID: 0
-position: 1874,-161
+position: 1871,-158
 ---
 Narrateur: You try to open the door without success.
 Narrateur: A sign is hanged on the door.
-Narrateur: "N°101."
+<< if local._room == "rm_hos_couloir" && local._x < 400>> 
+    Narrateur: "N°101."
+<< elseif local._room == "rm_hos_couloir" && local._x > 400>> 
+    Narrateur: "N°102."
+<< endif>>
 ===

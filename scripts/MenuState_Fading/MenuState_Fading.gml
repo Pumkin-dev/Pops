@@ -8,5 +8,6 @@ function MenuState_Fading(){
 		draw_state = MENUDRAW.FREE;
 		global.pause = false;
 		opacity = 1;
+		oCutscene.scene = CUTSCENE.INTRO;
 	}
 }

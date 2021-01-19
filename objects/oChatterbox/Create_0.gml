@@ -20,8 +20,15 @@ emotion = undefined;
 enum CHATTERBOXSTATE{
 	FREE,
 	INTERACTING,
+	CUTSCENE,
 }
 enum CHATTERBOXDRAW{
 	FREE,
-	INTERACTING
+	INTERACTING,
+	CUTSCENE
 }
+time = false;
+offset = 1;
+fxspeed = 1;
+_speed = 1;
+_pitch = 1;

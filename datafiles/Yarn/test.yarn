@@ -14,7 +14,8 @@ colorID: 0
 position: 920,81
 ---
 Je vois que tu es arrivé ici
-Impressionnant 
+Impressionnant
+<< "StopMusic">> 
 Mais tu ne vas pas pouvoir me battre comme ça ta mère la pute
     
 [[ Et si j'ai envie ? |IlVaSeBattre]]

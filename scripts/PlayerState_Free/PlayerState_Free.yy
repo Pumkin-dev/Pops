@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "player_scripts",
+    "path": "folders/Scripts/player_scripts.yy",
   },
   "resourceVersion": "1.0",
   "name": "PlayerState_Free",

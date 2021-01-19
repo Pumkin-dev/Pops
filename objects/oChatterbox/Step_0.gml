@@ -9,5 +9,8 @@ switch (state)
 	case CHATTERBOXSTATE.INTERACTING:
 		ChatterboxState_Interacting();
 		break;
+	case CHATTERBOXSTATE.CUTSCENE:
+		ChatterboxState_Cutscene();
+		break;
 }
 	

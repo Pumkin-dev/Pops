@@ -6,6 +6,8 @@
 function Chatterbox_Processing(box){
 	var _outlineWidth = 6;
 	var limit = sprite_get_width(sprTBox) - _outlineWidth;
+	_room = room_get_name(room);
+	_x = oPlayer.x;
 	
 	var vmove = PRESSEDUPKEY - PRESSEDDOWNKEY; 
 	slot = Wrap(slot + vmove, 0, 1);

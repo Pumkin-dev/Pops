@@ -1,0 +1,78 @@
+title: Start
+tags: 
+colorID: 0
+position: 1542,-191
+---
+Narrateur: Pops, I know this isn't going good lately.
+Narrateur: But you are starting to making me worry.
+Narrateur: You are more withdrawn than before.
+Narrateur: Will you, one day, stop brooding?
+Narrateur: Will you, one day, dream?
+Narrateur: Will you, one day, love... ?
+<< set local.offset to 1>>
+<< set local.fxspeed to 1>> 
+<< set local._speed to 1.5>>
+<< set local._pitch to 2>> 
+Narrateur: [shake]Pops, are you sleeping?[/shake]
+<< set local.offset to 3>>
+<< set local.fxspeed to 3>>
+Narrateur: [shake]I am boring you, isn't it?[/shake]
+<< set local.offset to 7>>
+<< set local.fxspeed to 7>>
+<< set local._speed to 2>>
+<< set local._pitch to 3>> 
+Narrateur: [shake]Pops, do you hear me?[/shake]
+<< set local.offset to 9>>
+<< set local.fxspeed to 9>>
+Narrateur: [shake]Pops![/shake]
+<< set local._speed to 3>>
+<< set local._pitch to 4>> 
+<< set local.offset to 11>>
+<< set local.fxspeed to 11>>
+Narrateur: [shake]Pops, wake up![/shake]
+Narrateur: [shake]Pops, don't do this to me[/shake]
+<< set local._speed to 4>>
+<< set local._pitch to 5>> 
+Narrateur: [shake]Not now...[/shake]
+Narrateur: [shake]Come on![/shake]
+Narrateur: POPS, WAKE UP
+===
+title: Debut
+tags: 
+colorID: 0
+position: 1770,-145
+---
+Narrateur: Pops, je sais que ça ne va pas fort dernièrement.
+Narrateur: Mais tu commences à m'inquiéter
+Narrateur: Tu es plus renfermé sur toi qu'avant.
+Narrateur: Est-ce qu'un jour, tu arrêteras de broyer du noir ?
+Narrateur: Est-ce qu'un jour, tu rêveras ?
+Narrateur: Est-ce qu'un jour, tu aimeras...?
+<< set local.offset to 1>>
+<< set local.fxspeed to 1>> 
+<< set local._speed to 1.5>>
+<< set local._pitch to 2>> 
+Narrateur: [shake]Pops, tu dors ?[/shake]
+<< set local.offset to 3>>
+<< set local.fxspeed to 3>>
+Narrateur: [shake]Je t'ennuie c'est ça ?[/shake]
+<< set local.offset to 7>>
+<< set local.fxspeed to 7>>
+<< set local._speed to 2>>
+<< set local._pitch to 3>> 
+Narrateur: [shake]Pops, tu m'entends ?[/shake]
+<< set local.offset to 9>>
+<< set local.fxspeed to 9>>
+Narrateur: [shake]Pops ![/shake]
+<< set local._speed to 3>>
+<< set local._pitch to 4>> 
+<< set local.offset to 11>>
+<< set local.fxspeed to 11>>
+Narrateur: [shake]Pops, réveille toi ![/shake]
+Narrateur: [shake]Pops, ne me fais pas ça[/shake]
+<< set local._speed to 4>>
+<< set local._pitch to 5>> 
+Narrateur: [shake]Pas maintenant...[/shake]
+Narrateur: [shake]Allez ![/shake]
+Narrateur: POPS, RÉVEILLE TOI
+===
