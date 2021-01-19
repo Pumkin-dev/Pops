@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "menu_scripts",
+    "path": "folders/Scripts/menu_scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Zoom",
+  "name": "launch_game",
   "tags": [],
   "resourceType": "GMScript",
 }

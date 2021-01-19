@@ -3,7 +3,7 @@
 function MenuDraw_Fading(){
 	if(!global.pause) exit;
 
-	var gwidth = oCamera.view_width, gheight = oCamera.view_height;
+	var gwidth = global.view_width, gheight = global.view_height;
 
 	var ds_grid = menu_pages[page], ds_height = ds_grid_height(ds_grid);
 	var y_buffer = 32, x_buffer = 16;

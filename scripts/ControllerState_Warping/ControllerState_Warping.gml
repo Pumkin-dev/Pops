@@ -1,6 +1,10 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function ControllerState_Warping(){
+	if (launching_game)
+	{
+		fading = true;
+	}
 	// Si le joueur a marché sur une warp
 	if (instance_exists(oPlayer) && oPlayer.state == PLAYERSTATE.WARPING)
 	{
@@ -30,6 +34,11 @@ function ControllerState_Warping(){
 				change_rooms = true;
 			}
 		}
+		else if (launching_game && oCutscene.scene == CUTSCENE.INTRO)
+		{
+			Fadingin(1, c_white, 1, false, oController);
+			if (!fading) {change_rooms = true};
+		}
 	}
 	if (change_rooms)
 	{
@@ -39,7 +48,7 @@ function ControllerState_Warping(){
 			sound_door_played = true;
 		}
 		// Si le joueur a marché sur une warp et que le fadingin s'est effectué
-		if (instance_exists(oPlayer) && oPlayer.state == PLAYERSTATE.WARPING)
+		if (instance_exists(oPlayer) && oPlayer.state == PLAYERSTATE.WARPING || launching_game)
 		{
 			// Selon la salle on change les coordonées de warp et on va dans la salle dédié
 			switch (room)

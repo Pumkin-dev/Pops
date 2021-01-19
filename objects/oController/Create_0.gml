@@ -33,6 +33,7 @@ fadingout = true;
 fading = false;
 change_rooms = false
 light = false;
+launching_game = false;
 
 enum CONTROLLERSTATE{
 	FREE,
@@ -40,3 +41,5 @@ enum CONTROLLERSTATE{
 }
 scribble_typewriter_add_character_delay(".", 200);
 alarm[0] = 20;
+
+global.view_width = 640; global.view_height = 360;

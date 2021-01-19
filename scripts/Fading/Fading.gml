@@ -1,25 +1,23 @@
-/// @description Fading(duration, color, fadeinboo)
+/// @description Fading(duration, fadeinboo)
 /// @function Fading
 /// @param {real} duration la durée en secondes à laquelle le fondu se fera
-/// @param {color} la couleur du fondu
 /// @param {index} wichfade soit le fadeout soit le fadein 
 
 // comme le nom l'indique, il va faire un fondu à une vitesse donnée inférieure à 1
-function Fading(duration, color, wichfade){
+function Fading(duration, wichfade){
 	// On calcule la vitesse par frame pour que le fondu se fasse pendant la durée
 	var lspeed = 1/(duration*room_speed)
-	// On change la couleur du fondu
-	layer_background_blend(layer_get_id("bground_fade"), color);
+	
 	
 	// Si c'est un fondu qui apparaît
-	if (instance_exists(oFadingout))
+	if (instance_exists(oFadingout) || instance_exists(oFadingoutWhite))
 	{
 		wichfade.alpha -= lspeed;
 		wichfade.alpha = clamp(wichfade.alpha, 0, 1);
 	}
 	
 	// Si c'est un fondu qui disparaît
-	if (instance_exists(oFadingin))
+	if (instance_exists(oFadingin) ||instance_exists(oFadinginWhite))
 	{
 		wichfade.alpha += lspeed;
 		wichfade.alpha = clamp(wichfade.alpha, 0, 1);
@@ -52,15 +50,23 @@ function Fading(duration, color, wichfade){
 /// @param {index} parent_object l'objet auquel appliquer le fading
 
 function Fadingout(duration, color, wait, event, parent_object){
-	if (!instance_exists(oFadingout))
+	if (!instance_exists(oFadingout) || !instance_exists(oFadingoutWhite))
 	{
-		fadeout = instance_create_layer(x, y, layer_get_id("fade"), oFadingout)
+		switch (color)
+		{
+			case c_black:
+				fadeout = instance_create_layer(x, y, layer_get_id("fade"), oFadingout);
+				break;
+			case c_white:
+				fadeout = instance_create_layer(x, y, layer_get_id("fade"), oFadingoutWhite);
+				break;
+		}
 	}
 	fadeout.x = 0;
 	fadeout.y = 0;
 	if (!fadeout.done)
 	{
-		Fading(duration, color, fadeout);
+		Fading(duration, fadeout);
 		if (fadeout.done)
 		{
 			oController.fadingin = true;
@@ -84,15 +90,23 @@ function Fadingout(duration, color, wait, event, parent_object){
 
 
 function Fadingin(duration, color, wait, event, parent_object){
-	if (!instance_exists(oFadingin))
+	if (!instance_exists(oFadingin) || !instance_exists(oFadinginWhite))
 	{
-		fadein = instance_create_layer(x, y, layer_get_id("fade"), oFadingin);
+		switch (color)
+		{
+			case c_black:
+				fadein = instance_create_layer(x, y, layer_get_id("fade"), oFadingin);
+				break;
+			case c_white:
+				fadein = instance_create_layer(x, y, layer_get_id("fade"), oFadinginWhite);
+				break;
+		}
 	}
 	fadein.x = 0;
 	fadein.y = 0;
 	if (!fadein.done)
 	{
-		Fading(duration, color, fadein)
+		Fading(duration, fadein)
 		if (fadein.done)
 		{
 			oController.fadingin = false;

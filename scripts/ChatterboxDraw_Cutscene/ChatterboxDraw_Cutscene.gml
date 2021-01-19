@@ -3,7 +3,7 @@
 function center_text(str){
 	var str_width = str.get_width()*str.get_typewriter_state();
 	var str_center = round(str_width/2);
-	return oCamera.view_width/2 - str_center;
+	return global.view_width/2 - str_center;
 }
 	
 ///@description Chatterbox_Printing()
@@ -16,7 +16,7 @@ function Chatterbox_Printing_Cutscene(box){
 	{
 		for (var i = 0; i < chatterbox_get_content_count(box); i++)
 		{
-			chatterbox_list[i].draw(center_text(chatterbox_list[i]), oCamera.view_height/2);
+			chatterbox_list[i].draw(center_text(chatterbox_list[i]), global.view_height/2);
 		}
 	}
 	

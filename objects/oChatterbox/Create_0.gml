@@ -32,3 +32,6 @@ offset = 1;
 fxspeed = 1;
 _speed = 1;
 _pitch = 1;
+zoom = 1;
+zoom_width = global.view_width;
+zoom_height = global.view_height;

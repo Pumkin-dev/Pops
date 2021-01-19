@@ -34,9 +34,8 @@ function Chatterbox_Processing_Cutscene(box){
 		emotion = undefined;
 		if (oCutscene.scene == CUTSCENE.INTRO)
 		{
-			room_goto(rm_hos_chambre_pops);
+			oCutscene.openyoureyes = true;
 		}
-		oCutscene.scene = CUTSCENE.FREE;
 		instance_destroy(oFace);
 		exit;
 	}

@@ -1,8 +1,4 @@
 draw_set_font(ConfusedHeart);
-global.pause = true;
-global.view_width = 640 
-global.view_height = 360
-
 global.key_revert = ord("X");
 global.key_enter  = vk_enter;
 global.key_left   = vk_left;
