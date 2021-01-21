@@ -3,7 +3,7 @@ tags:
 colorID: 0
 position: 1541,-192
 ---
-<<if $visite == true>>
+<<if local._room == "rm_hos_chambre_pops">>
     [[WakingUp]]
 <<endif>>
 Narrateur: Pops, I know this isn't going good lately.

@@ -27,3 +27,5 @@ enum PLAYERSTATE{
 	WARPING,
 	CUTSCENE
 }
+
+audio_listener_orientation(0, 1000, 0, 0, 0, 1);

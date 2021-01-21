@@ -15,6 +15,9 @@ switch (room)
 		light = true;
 		with (oPlayer) alarm[1] = 1;
 		break;
+	default:
+		
+		break;
 }
 
 if (light && !instance_exists(oLighting))

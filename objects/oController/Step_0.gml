@@ -29,4 +29,13 @@ if (PRESSEDXKEY)
 		instance_destroy(oPhone)
 	}
 }
+if (room != rm_hos_couloir)
+{
+	if (audio_is_playing(snd_phone))
+	{
+		show_debug_message("lol")
+		audio_stop_sound(snd_phone);
+	
+	}
+}
 

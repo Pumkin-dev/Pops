@@ -127,6 +127,8 @@ function PlayerState_Free(){
 
 		// de même
 		y += vspd;
+		
+		audio_listener_position(x, y, 0);
 
 		FurnituresUpOrDown();
 		
