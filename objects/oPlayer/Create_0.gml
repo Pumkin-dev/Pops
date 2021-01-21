@@ -24,5 +24,6 @@ with (oController)
 enum PLAYERSTATE{
 	FREE,
 	INTERACTING,
-	WARPING
+	WARPING,
+	CUTSCENE
 }

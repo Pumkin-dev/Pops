@@ -18,7 +18,14 @@ function ControllerState_Warping(){
 		if (instance_exists(oPlayer) && fadingout && oPlayer.state == PLAYERSTATE.WARPING)
 		{
 			// activez le fadingout
-			Fadingout(0.5, c_black, 1, false, oController)
+			if (oCutscene.scene == CUTSCENE.INTRO)
+			{
+				Fadingout(2, c_white, 1, false, oController);
+			}
+			else
+			{
+				Fadingout(0.5, c_black, 1, false, oController);
+			}
 			if (!fading)
 			{
 				oPlayer.state = PLAYERSTATE.FREE;
@@ -55,7 +62,7 @@ function ControllerState_Warping(){
 			{
 				case rm_menu:
 					room_goto(rm_hos_chambre_pops);
-					oCutscene.scene = CUTSCENE.FREE;
+					launching_game = false
 					break;
 				case rm_hos_chambre_pops:
 					warp_x = 128;

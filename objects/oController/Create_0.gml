@@ -20,8 +20,8 @@ sound_door_played = false;
 globalvar pause;
 global.pause = false;
 state = CONTROLLERSTATE.WARPING
-warp_x = 416;
-warp_y = 280;
+warp_x = 96;
+warp_y = 160;
 
 ctrller_front = true;
 ctrller_back = false;

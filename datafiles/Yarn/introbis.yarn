@@ -1,0 +1,105 @@
+title: Start
+tags: 
+colorID: 0
+position: 1541,-192
+---
+<<if $visite == true>>
+    [[WakingUp]]
+<<endif>>
+Narrateur: Pops, I know this isn't going good lately.
+<<set local.zoom_width to global.view_width/2>> 
+<<set local.zoom_height to global.view_height/2>> 
+<<set local.zoom to 0.001>> 
+Narrateur: But you are starting to making me worry.
+Narrateur: You are more withdrawn than before.
+Narrateur: Will you, one day, stop brooding?
+Narrateur: Will you, one day, dream?
+Narrateur: Will you, one day, [delay, 500]love... ?
+<<set local.offset to 1>>
+<<set local.fxspeed to 1>> 
+<<set local._speed to 1.5>>
+<<set local._pitch to 2>> 
+<<set local.zoom_width to global.view_width/4>> 
+<<set local.zoom_height to global.view_height/4>> 
+Narrateur: [shake]Pops, are you sleeping?[/shake]
+<<set local.offset to 3>>
+<<set local.fxspeed to 3>>
+Narrateur: [shake]I am boring you, aren't I?[/shake]
+<<set local.offset to 7>>
+<<set local.fxspeed to 7>>
+<<set local._speed to 2>>
+<<set local._pitch to 3>> 
+Narrateur: [shake]Pops, do you hear me?[/shake]
+<<set local.offset to 9>>
+<<set local.fxspeed to 9>>
+Narrateur: [shake]Pops![/shake]
+<<set local._speed to 3>>
+<<set local._pitch to 4>> 
+<<set local.offset to 11>>
+<<set local.fxspeed to 11>>
+Narrateur: [shake]Pops, wake up![/shake]
+Narrateur: [shake]Pops, don't do this to me[/shake]
+<< set local._speed to 4>>
+<< set local._pitch to 5>> 
+Narrateur: [shake]Not now...[/shake]
+Narrateur: [shake]Come on![/shake]
+<< set local._speed to 0>> 
+<<set local.zoom to 0>>
+<<StopSound>>
+Narrateur: POPS, WAKE UP
+<<set local._speed to 1>>
+<<set local._pitch to 1>> 
+<<set local.offset to 1>>
+<<set local.fxspeed to 1>>
+<<set local.zoom to 0.1>>
+<<set $visite to true>>
+===
+title: Debut
+tags: 
+colorID: 0
+position: 1770,-145
+---
+Narrateur: Pops, je sais que ça ne va pas fort dernièrement.
+Narrateur: Mais tu commences à m'inquiéter
+Narrateur: Tu es plus renfermé sur toi qu'avant.
+Narrateur: Est-ce qu'un jour, tu arrêteras de broyer du noir ?
+Narrateur: Est-ce qu'un jour, tu rêveras ?
+Narrateur: Est-ce qu'un jour, tu aimeras...?
+<< set local.offset to 1>>
+<< set local.fxspeed to 1>> 
+<< set local._speed to 1.5>>
+<< set local._pitch to 2>> 
+Narrateur: [shake]Pops, tu dors ?[/shake]
+<< set local.offset to 3>>
+<< set local.fxspeed to 3>>
+Narrateur: [shake]Je t'ennuie c'est ça ?[/shake]
+<< set local.offset to 7>>
+<< set local.fxspeed to 7>>
+<< set local._speed to 2>>
+<< set local._pitch to 3>> 
+Narrateur: [shake]Pops, tu m'entends ?[/shake]
+<< set local.offset to 9>>
+<< set local.fxspeed to 9>>
+Narrateur: [shake]Pops ![/shake]
+<< set local._speed to 3>>
+<< set local._pitch to 4>> 
+<< set local.offset to 11>>
+<< set local.fxspeed to 11>>
+Narrateur: [shake]Pops, réveille toi ![/shake]
+Narrateur: [shake]Pops, ne me fais pas ça[/shake]
+<< set local._speed to 4>>
+<< set local._pitch to 5>> 
+Narrateur: [shake]Pas maintenant...[/shake]
+Narrateur: [shake]Allez ![/shake]
+Narrateur: [blink]POPS, RÉVEILLE TOI[/blink]
+===
+title: WakingUp
+tags: 
+colorID: 0
+position: 1518,67
+---
+Pops: ... Quelle étrange rêve.
+Pops: J'avais l'impression de...
+Pops: Hein ? C'est vraiment sombre.
+Pops: Je ferai mieux de rallumer la lumière.
+===

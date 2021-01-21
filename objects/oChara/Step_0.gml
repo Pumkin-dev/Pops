@@ -4,166 +4,169 @@
 // Inherit the parent event
 event_inherited();
 
-// Si on ne marche pas
-if (!walk)
+if (oCutscene.scene != CUTSCENE.INTRO)
 {
-	if (front && spr_cycle < 3)
+	// Si on ne marche pas
+	if (!walk)
 	{
+		if (front && spr_cycle < 3)
+		{
 		
-		if (ITEM[# item.flashlight, slot.get] )
-		{
-			sprite_index = spr_front_flight;
+			if (ITEM[# item.flashlight, slot.get] )
+			{
+				sprite_index = spr_front_flight;
+			}
+			else
+			{
+				sprite_index = spr_front;
+			}
 		}
-		else
+		else if (front && spr_cycle == 3)
 		{
-			sprite_index = spr_front;
+			if (ITEM[# item.flashlight, slot.get] )
+			{
+				sprite_index = spr_front_wink_flight;
+			}
+			else
+			{
+				sprite_index = spr_front_wink;
+			}
 		}
-	}
-	else if (front && spr_cycle == 3)
-	{
-		if (ITEM[# item.flashlight, slot.get] )
+		else if (back)
 		{
-			sprite_index = spr_front_wink_flight;
+			if (ITEM[# item.flashlight, slot.get] )
+			{
+				sprite_index = spr_back_flight;
+			}
+			else
+			{
+				sprite_index = spr_back;
+			}
 		}
-		else
+		else if (left && spr_cycle < 3)
 		{
-			sprite_index = spr_front_wink;
+			if (ITEM[# item.flashlight, slot.get] )
+			{
+				sprite_index = spr_left_flight;
+			}
+			else
+			{
+				sprite_index = spr_left;
+			}
 		}
-	}
-	else if (back)
-	{
-		if (ITEM[# item.flashlight, slot.get] )
+		else if (left && spr_cycle == 3)
 		{
-			sprite_index = spr_back_flight;
+			if (ITEM[# item.flashlight, slot.get] )
+			{
+				sprite_index = spr_left_wink_flight;
+			}
+			else
+			{
+				sprite_index = spr_left_wink;
+			}
 		}
-		else
+		else if (right && spr_cycle < 3)
 		{
-			sprite_index = spr_back;
+			if (ITEM[# item.flashlight, slot.get] )
+			{
+				sprite_index = spr_right_flight;
+			}
+			else
+			{
+				sprite_index = spr_right;
+			}
 		}
-	}
-	else if (left && spr_cycle < 3)
-	{
-		if (ITEM[# item.flashlight, slot.get] )
+		else if (right && spr_cycle == 3)
 		{
-			sprite_index = spr_left_flight;
-		}
-		else
-		{
-			sprite_index = spr_left;
-		}
-	}
-	else if (left && spr_cycle == 3)
-	{
-		if (ITEM[# item.flashlight, slot.get] )
-		{
-			sprite_index = spr_left_wink_flight;
-		}
-		else
-		{
-			sprite_index = spr_left_wink;
-		}
-	}
-	else if (right && spr_cycle < 3)
-	{
-		if (ITEM[# item.flashlight, slot.get] )
-		{
-			sprite_index = spr_right_flight;
-		}
-		else
-		{
-			sprite_index = spr_right;
-		}
-	}
-	else if (right && spr_cycle == 3)
-	{
-		if (ITEM[# item.flashlight, slot.get] )
-		{
-			sprite_index = spr_right_wink_flight
-		}
-		else
-		{
-			sprite_index = spr_right_wink;
-		}
-	}
-}
-// Sinon si on marche
-else
-{
-	if (front && spr_cycle < 3)
-	{
-		if (ITEM[# item.flashlight, slot.get] )
-		{
-			sprite_index = spr_front_walk_flight;
-		}
-		else
-		{
-			sprite_index = spr_front_walk;
+			if (ITEM[# item.flashlight, slot.get] )
+			{
+				sprite_index = spr_right_wink_flight
+			}
+			else
+			{
+				sprite_index = spr_right_wink;
+			}
 		}
 	}
-	else if (front && spr_cycle == 3)
+	// Sinon si on marche
+	else
 	{
-		if (ITEM[# item.flashlight, slot.get] )
+		if (front && spr_cycle < 3)
 		{
-			sprite_index = spr_front_walk_wink_flight;
+			if (ITEM[# item.flashlight, slot.get] )
+			{
+				sprite_index = spr_front_walk_flight;
+			}
+			else
+			{
+				sprite_index = spr_front_walk;
+			}
 		}
-		else
+		else if (front && spr_cycle == 3)
 		{
-			sprite_index = spr_front_walk_wink;
+			if (ITEM[# item.flashlight, slot.get] )
+			{
+				sprite_index = spr_front_walk_wink_flight;
+			}
+			else
+			{
+				sprite_index = spr_front_walk_wink;
+			}
 		}
-	}
-	else if (back)
-	{
-		if (ITEM[# item.flashlight, slot.get])
+		else if (back)
 		{
-			sprite_index = spr_back_walk_flight;
+			if (ITEM[# item.flashlight, slot.get])
+			{
+				sprite_index = spr_back_walk_flight;
+			}
+			else
+			{
+				sprite_index = spr_back_walk;
+			}
 		}
-		else
+		else if (left && spr_cycle < 3)
 		{
-			sprite_index = spr_back_walk;
+			if (ITEM[# item.flashlight, slot.get] )
+			{
+				sprite_index = spr_left_walk_flight;
+			}
+			else
+			{
+				sprite_index = spr_left_walk;
+			}
 		}
-	}
-	else if (left && spr_cycle < 3)
-	{
-		if (ITEM[# item.flashlight, slot.get] )
+		else if (left && spr_cycle == 3)
 		{
-			sprite_index = spr_left_walk_flight;
+			if (ITEM[# item.flashlight, slot.get] )
+			{
+				sprite_index = spr_left_walk_wink_flight;
+			}
+			else
+			{
+				sprite_index = spr_left_walk_wink;
+			}
 		}
-		else
+		else if (right && spr_cycle < 3)
 		{
-			sprite_index = spr_left_walk;
+			if (ITEM[# item.flashlight, slot.get] )
+			{
+				sprite_index = spr_right_walk_flight;
+			}
+			else
+			{
+				sprite_index = spr_right_walk;
+			}
 		}
-	}
-	else if (left && spr_cycle == 3)
-	{
-		if (ITEM[# item.flashlight, slot.get] )
+		else if (right && spr_cycle == 3)
 		{
-			sprite_index = spr_left_walk_wink_flight;
-		}
-		else
-		{
-			sprite_index = spr_left_walk_wink;
-		}
-	}
-	else if (right && spr_cycle < 3)
-	{
-		if (ITEM[# item.flashlight, slot.get] )
-		{
-			sprite_index = spr_right_walk_flight;
-		}
-		else
-		{
-			sprite_index = spr_right_walk;
-		}
-	}
-	else if (right && spr_cycle == 3)
-	{
-		if (ITEM[# item.flashlight, slot.get] )
-		{
-			sprite_index = spr_right_walk_wink_flight;
-		}
-		else
-		{
-			sprite_index = spr_right_walk_wink;
+			if (ITEM[# item.flashlight, slot.get] )
+			{
+				sprite_index = spr_right_walk_wink_flight;
+			}
+			else
+			{
+				sprite_index = spr_right_walk_wink;
+			}
 		}
 	}
 }

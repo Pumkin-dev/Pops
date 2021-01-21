@@ -3,6 +3,7 @@
 function Setting_Chatterbox(){
 	chatterbox_add_function("StopSound", stop_sound)
 	chatterbox_load_from_file("intro.yarn")
+	chatterbox_load_from_file("intro2.yarn")
 	chatterbox_load_from_file("hbed.yarn")
 	chatterbox_load_from_file("staffdoor.yarn")
 	chatterbox_load_from_file("hosdoor.yarn")

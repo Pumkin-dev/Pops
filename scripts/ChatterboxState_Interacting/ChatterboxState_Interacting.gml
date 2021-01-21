@@ -25,6 +25,7 @@ function Chatterbox_Processing(box){
 		{
 			chatterbox_option_list[i].flush();
 		}
+		
 		switch (LANG)
 		{
 			case "fr":
@@ -33,6 +34,17 @@ function Chatterbox_Processing(box){
 			case "en":
 				chatterbox_goto(box, "Start");
 				break;
+		}
+		
+		if (oCutscene.scene = CUTSCENE.INTRO)
+		{
+			with (oPlayer)
+			{
+				sprite_index = sprPopsStandingUp;
+				image_index = 0;
+				image_speed = 1;
+				
+			}
 		}
 		speaker = undefined;
 		emotion = undefined;
@@ -154,7 +166,14 @@ function Chatterbox_Processing(box){
 function ChatterboxState_Interacting(){
 	if (box == undefined)
 	{
-		box = wichchatterbox(global.obj_det);
+		if (oCutscene.scene == CUTSCENE.INTRO)
+		{
+			box = intro_box;
+		}
+		else
+		{
+			box = wichchatterbox(global.obj_det);
+		}
 	}
 	Chatterbox_Processing(box);
 	if (state == CHATTERBOXSTATE.FREE)

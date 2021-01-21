@@ -4,6 +4,7 @@
 global.item = ds_grid_create(4, 0);
 
 enum item{
+	phone,
 	flashlight,
 	stick,
 }
@@ -13,9 +14,10 @@ enum slot{
 	description,
 	get,
 }
-	
-create_item(item.flashlight, "flashlight", undefined, "A flashlight. It allows you to enlighten the darkness", false);
-create_item(item.stick, "stick", undefined, "You've hurt a poor plant, you should be ashamed... Naaah, just kidding, you needed it.", false)
+
+create_item(item.phone, "Phone", undefined, "Your phone. How did it get here? It looks like it has been reset", false)
+create_item(item.flashlight, "Flashlight", undefined, "A flashlight. It allows you to enlighten the darkness", false);
+create_item(item.stick, "Stick", undefined, "You've hurt a poor plant, you should be ashamed... Naaah, just kidding, you needed it.", false)
 
 
 #macro ITEM global.item

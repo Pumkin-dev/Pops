@@ -6,6 +6,7 @@
 function Chatterbox_Processing_Cutscene(box){
 	var _outlineWidth = 6;
 	var limit = sprite_get_width(sprTBox) - _outlineWidth;
+	_room = room_get_name(room)
 	var vmove = PRESSEDUPKEY - PRESSEDDOWNKEY; 
 	slot = Wrap(slot + vmove, 0, 1);
 	

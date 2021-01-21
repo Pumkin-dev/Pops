@@ -15,4 +15,7 @@ switch (state)
 	case PLAYERSTATE.WARPING:
 		PlayerState_Warping();
 		break;
+	case PLAYERSTATE.CUTSCENE:
+		PlayerState_Cutscene();
+		break;
 }

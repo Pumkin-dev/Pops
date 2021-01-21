@@ -27,11 +27,12 @@ enum CHATTERBOXDRAW{
 	INTERACTING,
 	CUTSCENE
 }
-time = false;
 offset = 1;
 fxspeed = 1;
 _speed = 1;
 _pitch = 1;
 zoom = 1;
+_room = room_get_name(room)
 zoom_width = global.view_width;
 zoom_height = global.view_height;
+obj_zoom = oPointZoom;

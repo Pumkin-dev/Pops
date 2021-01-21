@@ -6,7 +6,7 @@
     "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "create_item_grid",
+  "name": "create_item",
   "tags": [],
   "resourceType": "GMScript",
 }

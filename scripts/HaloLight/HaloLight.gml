@@ -8,6 +8,15 @@ function HaloLight(){
 	gpu_set_blendmode(bm_subtract);
 	with (oPlayer)
 	{
-		draw_sprite_ext(sprLight, 1, x, y, scale_light, scale_light, 0, c_white, 1);
+		switch (sprite_index)
+		{
+			case sprPopsWakingUp:
+				var center_x = bbox_left + sprite_width/2; var center_y = bbox_top + sprite_height/2;
+				draw_sprite_ext(sprLight, 1, center_x, center_y, scale_light, scale_light, 0, c_white, 1);
+				break;
+			default:
+				draw_sprite_ext(sprLight, 1, x, y, scale_light, scale_light, 0, c_white, 1);
+				break;
+		}
 	}
 }
