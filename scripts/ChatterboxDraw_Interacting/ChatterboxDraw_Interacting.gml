@@ -4,25 +4,67 @@ function Draw_Portrait(){
 	switch (speaker)
 	{
 		case "Pops":
-			instance_create_layer(64 + sprite_get_width(sprTBox) - 6, 256 + sprite_get_height(sprTBox) - 6, "Chatterbox", oPopsFace);
+			instance_create_layer(120 + sprite_get_width(sprTBox), 256 + sprite_get_height(sprTBox) + 5, "Chatterbox", oPopsFace);
 			break;
 		default:
 			instance_destroy(oFace);
 			break;
 	}
 }
+function center_text(str){
+	var str_width = str.get_width()*str.get_typewriter_state();
+	var str_center = round(str_width/2);
+	return global.view_width/2 - str_center;
+}
+function draw_test(_x, _y, i){
+	var width = chatterbox_list[i].get_width() + string_width("M") * 2;
+	var height = chatterbox_list[i].get_height() + string_height("M");
+	previousWidth = lerp(previousWidth, width, 0.1);
+	previousHeight = lerp(previousHeight, height, 0.1);
+	if (surface_get_width(surf_growup) != sprite_get_width(sprTail_bulb) + width || surface_get_height(surf_growup) != height)
+	{
+		surface_resize(surf_growup, sprite_get_width(sprTail_bulb) + previousWidth, previousHeight);
+	}
+	surface_set_target(surf_growup);
+		
+	draw_nineslice(sprBox, 0,  0, previousWidth, previousHeight);
+	chatterbox_list[i].draw(string_width("M"), string_height("M")/2);
+	surface_reset_target();
+		
+	scale = lerp(scale, 1, 0.1)
+	var center_x = surface_get_width(surf_growup)/2;
+	var center_y = surface_get_height(surf_growup)/2;
+	center_x = ceil(_x + center_x - (surface_get_width(surf_growup) * scale)/2);
+	center_y = ceil(_y + center_y - (surface_get_height(surf_growup) * scale)/2);
+		
+	draw_surface_ext(surf_growup, center_x, center_y, scale, scale, 0, c_white, 1);
+}
 ///@description Chatterbox_Printing()
 ///@func Chatterbox_Printing
 ///@param box file yarn read
 function Chatterbox_Printing(box){
 	var _outlineWidth = 6;
-	draw_sprite(sprTBox, 0, 64, 256);
+	/*
+	if (room != rm_menu)
+	{
+		draw_sprite(sprTBox, 0, 64, 256);
+	}
+	*/
 	// on affiche le contenu du .yarn 
 	if (draw_content)
 	{
 		for (var i = 0; i < chatterbox_get_content_count(box); i++)
 		{
-			chatterbox_list[i].draw(64 + _outlineWidth, 256 + _outlineWidth);
+			if (room == rm_menu)
+			{
+				chatterbox_list[i].draw(center_text(chatterbox_list[i]), 180);
+			}
+			else
+			{
+				//chatterbox_list[i].draw(64 + _outlineWidth, 256 + _outlineWidth);
+	
+				draw_test(64 + _outlineWidth, 256 + _outlineWidth, i)
+			}
 		}
 	}
 	

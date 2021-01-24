@@ -6,8 +6,7 @@ function Cutscene_Intro(){
 		case rm_menu:
 			if (!openyoureyes)
 			{
-				oChatterbox.state = CHATTERBOXSTATE.CUTSCENE;
-				oChatterbox.draw = CHATTERBOXDRAW.CUTSCENE;
+				oChatterbox.state = CHATTERBOXSTATE.INTERACTING;
 			}
 			else
 			{

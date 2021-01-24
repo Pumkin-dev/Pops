@@ -25,10 +25,10 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"3ef18377-6dc6-43b4-8e80-6584548dcb46","path":"sprites/sprCardiogramme/sprCardiogramme.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"3ef18377-6dc6-43b4-8e80-6584548dcb46","path":"sprites/sprCardiogramme/sprCardiogramme.yy",},"LayerId":{"name":"4cde07f0-ce3b-4432-a698-c748b30463aa","path":"sprites/sprCardiogramme/sprCardiogramme.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"3ef18377-6dc6-43b4-8e80-6584548dcb46","path":"sprites/sprCardiogramme/sprCardiogramme.yy",},"LayerId":{"name":"52369057-8af7-44a1-8530-10a0fb8950a6","path":"sprites/sprCardiogramme/sprCardiogramme.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"3ef18377-6dc6-43b4-8e80-6584548dcb46","path":"sprites/sprCardiogramme/sprCardiogramme.yy",},"LayerId":{"name":"533dd3a0-71e3-4b32-bc9e-5b6aee5039e1","path":"sprites/sprCardiogramme/sprCardiogramme.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"3ef18377-6dc6-43b4-8e80-6584548dcb46","path":"sprites/sprCardiogramme/sprCardiogramme.yy",},"LayerId":{"name":"8ad637fa-ba65-4515-bd2e-f9cb4a359cef","path":"sprites/sprCardiogramme/sprCardiogramme.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"3ef18377-6dc6-43b4-8e80-6584548dcb46","path":"sprites/sprCardiogramme/sprCardiogramme.yy",},"LayerId":{"name":"52369057-8af7-44a1-8530-10a0fb8950a6","path":"sprites/sprCardiogramme/sprCardiogramme.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"3ef18377-6dc6-43b4-8e80-6584548dcb46","path":"sprites/sprCardiogramme/sprCardiogramme.yy",},"LayerId":{"name":"4cde07f0-ce3b-4432-a698-c748b30463aa","path":"sprites/sprCardiogramme/sprCardiogramme.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sprCardiogramme","path":"sprites/sprCardiogramme/sprCardiogramme.yy",},"resourceVersion":"1.0","name":"3ef18377-6dc6-43b4-8e80-6584548dcb46","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {

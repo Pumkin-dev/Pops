@@ -8,3 +8,5 @@ enum CUTSCENE{
 	ACALL,
 	FREE
 }
+
+phone_emit = -1;

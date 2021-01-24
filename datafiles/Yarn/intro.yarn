@@ -1,11 +1,8 @@
-title: Start
+title: IntroEN
 tags: 
 colorID: 0
 position: 1541,-192
 ---
-<<if local._room == "rm_hos_chambre_pops">>
-    [[WakingUp]]
-<<endif>>
 Narrateur: Pops, I know this isn't going good lately.
 <<set local.zoom_width to global.view_width/2>> 
 <<set local.zoom_height to global.view_height/2>> 
@@ -52,54 +49,98 @@ Narrateur: POPS, WAKE UP
 <<set local.offset to 1>>
 <<set local.fxspeed to 1>>
 <<set local.zoom to 0.1>>
-<<set $visite to true>>
 ===
 title: Debut
 tags: 
 colorID: 0
-position: 1770,-145
+position: 1901,-247
 ---
-Narrateur: Pops, je sais que ça ne va pas fort dernièrement.
-Narrateur: Mais tu commences à m'inquiéter
-Narrateur: Tu es plus renfermé sur toi qu'avant.
-Narrateur: Est-ce qu'un jour, tu arrêteras de broyer du noir ?
-Narrateur: Est-ce qu'un jour, tu rêveras ?
-Narrateur: Est-ce qu'un jour, tu aimeras...?
-<< set local.offset to 1>>
-<< set local.fxspeed to 1>> 
-<< set local._speed to 1.5>>
-<< set local._pitch to 2>> 
-Narrateur: [shake]Pops, tu dors ?[/shake]
-<< set local.offset to 3>>
-<< set local.fxspeed to 3>>
-Narrateur: [shake]Je t'ennuie c'est ça ?[/shake]
-<< set local.offset to 7>>
-<< set local.fxspeed to 7>>
-<< set local._speed to 2>>
-<< set local._pitch to 3>> 
-Narrateur: [shake]Pops, tu m'entends ?[/shake]
-<< set local.offset to 9>>
-<< set local.fxspeed to 9>>
-Narrateur: [shake]Pops ![/shake]
-<< set local._speed to 3>>
-<< set local._pitch to 4>> 
-<< set local.offset to 11>>
-<< set local.fxspeed to 11>>
-Narrateur: [shake]Pops, réveille toi ![/shake]
-Narrateur: [shake]Pops, ne me fais pas ça[/shake]
-<< set local._speed to 4>>
-<< set local._pitch to 5>> 
-Narrateur: [shake]Pas maintenant...[/shake]
-Narrateur: [shake]Allez ![/shake]
-Narrateur: [blink]POPS, RÉVEILLE TOI[/blink]
+<<if visited("IntroFR") == false>>
+    [[IntroFR]]
+<<else>>
+    [[Reveil]]
+<<endif>>
 ===
 title: WakingUp
 tags: 
 colorID: 0
 position: 1518,67
 ---
+Pops: ... What a strange dream.
+Pops: It looked like I was about to...
+Pops: Huh ? It's weird.
+Pops: I don't remember turning off the lights.
+===
+title: Start
+tags: 
+colorID: 0
+position: 1150,-162
+---
+<<if visited("IntroEN") == false>>
+    [[IntroEN]]
+<<else>>
+    [[WakingUp]]
+<<endif>>
+===
+title: IntroFR
+tags: 
+colorID: 0
+position: 2021,-467
+---
+Narrateur: Pops, je sais que ça ne va pas fort dernièrement.
+<<set local.zoom_width to global.view_width/2>> 
+<<set local.zoom_height to global.view_height/2>> 
+<<set local.zoom to 0.001>> 
+Narrateur: Mais tu commence à m'inquiéter.
+Narrateur: Tu es plus renfermé qu'avant.
+Narrateur: Est-ce qu'un jour, tu arrêteras de broyer du noir ?
+Narrateur: Est-ce qu'un jour, tu rêveras ?
+Narrateur: Est-ce qu'un jour, tu[delay, 500]aimeras... ?
+<<set local.offset to 1>>
+<<set local.fxspeed to 1>> 
+<<set local._speed to 1.5>>
+<<set local._pitch to 2>> 
+<<set local.zoom_width to global.view_width/4>> 
+<<set local.zoom_height to global.view_height/4>> 
+Narrateur: [shake]Pops, tu dors ?[/shake]
+<<set local.offset to 3>>
+<<set local.fxspeed to 3>>
+Narrateur: [shake]Je t'ennuie, c'est ça ?[/shake]
+<<set local.offset to 7>>
+<<set local.fxspeed to 7>>
+<<set local._speed to 2>>
+<<set local._pitch to 3>> 
+Narrateur: [shake]Pops, tu m'entends ?[/shake]
+<<set local.offset to 9>>
+<<set local.fxspeed to 9>>
+Narrateur: [shake]Pops ![/shake]
+<<set local._speed to 3>>
+<<set local._pitch to 4>> 
+<<set local.offset to 11>>
+<<set local.fxspeed to 11>>
+Narrateur: [shake]Pops, réveille-toi ![/shake]
+Narrateur: [shake]Pops, ne me fais pas ça ![/shake]
+<< set local._speed to 4>>
+<< set local._pitch to 5>> 
+Narrateur: [shake]Pas maintenant...[/shake]
+Narrateur: [shake]Allez ![/shake]
+<< set local._speed to 0>> 
+<<set local.zoom to 0>>
+<<StopSound>>
+Narrateur: POPS, RÉVEILLE-TOI
+<<set local._speed to 1>>
+<<set local._pitch to 1>> 
+<<set local.offset to 1>>
+<<set local.fxspeed to 1>>
+<<set local.zoom to 0.1>>
+===
+title: Reveil
+tags: 
+colorID: 0
+position: 2241,-467
+---
 Pops: ... Quelle étrange rêve.
 Pops: J'avais l'impression de...
 Pops: Hein ? C'est bizarre.
-Pops: Je ne me rappelle pas avoir éteint la lumière.
+Pops: Je ne me rappelle pas avoir éteint la lumière. Text
 ===

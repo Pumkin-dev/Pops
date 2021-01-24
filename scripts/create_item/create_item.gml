@@ -8,7 +8,6 @@
 function create_item(item, name, sprite, description, get){
 	if (ds_grid_height(ITEM) <= item) {ds_grid_resize(ITEM, 4, item + 1)};
 	ds_grid_set(ITEM, slot.name, item, name);
-	show_debug_message(item); show_debug_message(slot.sprite)
 	ds_grid_set(ITEM, slot.sprite, item, sprite);
 	ds_grid_set(ITEM, slot.description, item, description);
 	ds_grid_set(ITEM, slot.get, item, get);

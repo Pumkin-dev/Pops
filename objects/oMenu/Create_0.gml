@@ -1,6 +1,5 @@
 draw_set_font(ConfusedHeart);
 global.pause = true;
-show_debug_message(camera_get_view_width(view));
 
 global.key_revert = ord("X");
 global.key_enter  = vk_enter;

@@ -1,0 +1,30 @@
+title: Start
+tags: 
+colorID: 0
+position: 1391,-502
+---
+<<if visited("PhoneRing") == false>>
+    [[PhoneRing]]
+<<else>>
+    [[MysteriousCall0]]
+<<endif>>
+===
+title: PhoneRing
+tags: 
+colorID: 0
+position: 1511,-722
+---
+Narrateur: A weird sound can be heard throughout the corridor.
+Pops: B-But it's my phone ring!
+Pops: Why is my phone here?
+Pops: ...
+Pops: And why did I never realize how ridiculous this ring is...
+Pops: Maybe because nobody ever calls me...
+===
+title: MysteriousCall0
+tags: 
+colorID: 0
+position: 1731,-722
+---
+Empty Text
+===

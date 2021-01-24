@@ -36,3 +36,8 @@ _room = room_get_name(room)
 zoom_width = global.view_width;
 zoom_height = global.view_height;
 obj_zoom = oPointZoom;
+
+surf_growup = surface_create(1, 1)
+previousWidth = 1;
+previousHeight = 1;
+scale = 0.0001;

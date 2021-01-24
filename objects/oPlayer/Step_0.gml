@@ -4,6 +4,11 @@
 // Inherit the parent event
 event_inherited();
 
+if (oCutscene.scene != CUTSCENE.FREE && oCutscene.scene != CUTSCENE.INTRO)
+{
+	state = PLAYERSTATE.CUTSCENE;
+}
+
 switch (state)
 {
 	case PLAYERSTATE.FREE:

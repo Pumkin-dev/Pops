@@ -7,7 +7,10 @@ function Chatterbox_Processing(box){
 	var _outlineWidth = 6;
 	var limit = sprite_get_width(sprTBox) - _outlineWidth;
 	_room = room_get_name(room);
-	_x = oPlayer.x;
+	if (instance_exists(oPlayer))
+	{
+		_x = oPlayer.x;
+	}
 	
 	var vmove = PRESSEDUPKEY - PRESSEDDOWNKEY; 
 	slot = Wrap(slot + vmove, 0, 1);
@@ -16,7 +19,11 @@ function Chatterbox_Processing(box){
 	if (chatterbox_is_stopped(box)) 
 	{
 		state = CHATTERBOXSTATE.FREE;
-		oPlayer.state = PLAYERSTATE.FREE;
+		surface_free(surf_growup);
+		if (instance_exists(oPlayer))
+		{
+			oPlayer.state = PLAYERSTATE.FREE;
+		}
 		for (var i = 0; i < chatterbox_get_content_count(box); i++)
 		{
 			chatterbox_list[i].flush();
@@ -38,14 +45,31 @@ function Chatterbox_Processing(box){
 		
 		if (oCutscene.scene = CUTSCENE.INTRO)
 		{
-			with (oPlayer)
+			if (!oCutscene.openyoureyes)
 			{
-				sprite_index = sprPopsStandingUp;
-				image_index = 0;
-				image_speed = 1;
+				oCutscene.openyoureyes = true;
+			}
+			if (room == rm_hos_chambre_pops)
+			{
+				with (oPlayer)
+				{
+					sprite_index = sprPopsStandingUp;
+					image_index = 0;
+					image_speed = 1;
 				
+				}
 			}
 		}
+		if (oCutscene.scene != CUTSCENE.FREE && oCutscene.scene != CUTSCENE.INTRO)
+		{
+			oCutscene.scene = CUTSCENE.FREE;
+			if (instance_exists(oPlayer))
+			{
+				oPlayer.state = PLAYERSTATE.FREE;
+			}
+		}
+		
+		if (instance_exists(oBox)) { instance_destroy(oBox); }
 		speaker = undefined;
 		emotion = undefined;
 		instance_destroy(oFace);
@@ -164,15 +188,23 @@ function Chatterbox_Processing(box){
 	}
 }
 function ChatterboxState_Interacting(){
+	if (!surface_exists(surf_growup))
+	{
+		surf_growup = surface_create(1, 1);
+	}
 	if (box == undefined)
 	{
-		if (oCutscene.scene == CUTSCENE.INTRO)
+		switch (oCutscene.scene)
 		{
-			box = intro_box;
-		}
-		else
-		{
-			box = wichchatterbox(global.obj_det);
+			case CUTSCENE.INTRO:
+				box = intro_box;
+				break;
+			case CUTSCENE.ACALL:
+				box = phone_guy_box;
+				break;
+			default:
+				box = wichchatterbox(global.obj_det);
+				break;
 		}
 	}
 	Chatterbox_Processing(box);
