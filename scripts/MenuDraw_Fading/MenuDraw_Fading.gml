@@ -50,7 +50,8 @@ function MenuDraw_Fading(){
 			
 				if(current_val == 0) left_shift = "";
 				if(current_val == array_length_1d(ds_grid[# 4, yy])-1) right_shift = "";
-			
+				
+				if (inputting && yy == menu_option[pages]) {c = c_yellow;} 
 				draw_text_color(rtx, rty, left_shift + current_array[current_val] + right_shift, c,c,c,c, opacity);
 	
 			    break;
@@ -63,6 +64,7 @@ function MenuDraw_Fading(){
 				c = c_white;
 				
 				draw_line_width(rtx, rty, rtx +len, rty, 2);
+				if (inputting && yy == menu_option[pages]) {c = c_yellow;} 
 				draw_circle_color(rtx + (circle_pos*len), rty, 4, c,c, false);
 				draw_text_color(rtx + (len * 1.2), rty, string(floor(circle_pos*100))+"%", c,c,c,c, opacity);
 				break;	
@@ -71,6 +73,8 @@ function MenuDraw_Fading(){
 				    var current_val = ds_grid[# 3, yy];
 					var c1, c2;
 					c = c_white;
+					
+					if (inputting && yy == menu_option[pages]) {c = c_yellow;} 
 				 
 					if(current_val == 0) { c1 = c; c2 = c_dkgray; }
 					else                 { c1 = c_dkgray; c2 = c; }
@@ -91,6 +95,7 @@ function MenuDraw_Fading(){
 				}
 				
 				c = c_white;
+				if (inputting && yy == menu_option[pages]) {c = c_yellow;} 
 				draw_text_color(rtx, rty, string_val, c,c,c,c, opacity);
 				
 				break;

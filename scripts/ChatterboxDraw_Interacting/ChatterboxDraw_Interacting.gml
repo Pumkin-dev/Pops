@@ -4,7 +4,7 @@ function Draw_Portrait(){
 	switch (speaker)
 	{
 		case "Pops":
-			instance_create_layer(120 + sprite_get_width(sprTBox), 256 + sprite_get_height(sprTBox) + 5, "Chatterbox", oPopsFace);
+			instance_create_layer(global.view_width, global.view_height, "Chatterbox", oPopsFace);
 			break;
 		default:
 			instance_destroy(oFace);
@@ -16,9 +16,9 @@ function center_text(str){
 	var str_center = round(str_width/2);
 	return global.view_width/2 - str_center;
 }
-function draw_test(_x, _y, i){
-	var width = chatterbox_list[i].get_width() + string_width("M") * 2;
-	var height = chatterbox_list[i].get_height() + string_height("M");
+function draw_test(_x, _y, scribble_element){
+	var width = scribble_element.get_width() + string_width("M") * 2;
+	var height = scribble_element.get_height() + string_height("M");
 	previousWidth = lerp(previousWidth, width, 0.1);
 	previousHeight = lerp(previousHeight, height, 0.1);
 	if (surface_get_width(surf_growup) != sprite_get_width(sprTail_bulb) + width || surface_get_height(surf_growup) != height)
@@ -28,16 +28,28 @@ function draw_test(_x, _y, i){
 	surface_set_target(surf_growup);
 		
 	draw_nineslice(sprBox, 0,  0, previousWidth, previousHeight);
-	chatterbox_list[i].draw(string_width("M"), string_height("M")/2);
+	scribble_element.draw(string_width("M"), string_height("M")/2);
 	surface_reset_target();
 		
 	scale = lerp(scale, 1, 0.1)
-	var center_x = surface_get_width(surf_growup)/2;
-	var center_y = surface_get_height(surf_growup)/2;
+	var center_x = width/2;
+	var center_y = height/2;
+	if (instance_exists(oFace))
+	{
+		_x -= width;
+		_y -= height;
+	}
+	else
+	{
+		_x -= center_x;
+		_y -= height + 32;
+	}
 	center_x = ceil(_x + center_x - (surface_get_width(surf_growup) * scale)/2);
 	center_y = ceil(_y + center_y - (surface_get_height(surf_growup) * scale)/2);
+	pos_x = lerp(pos_x, center_x, 0.4)
+	pos_y = lerp(pos_y, center_y, 0.4)
 		
-	draw_surface_ext(surf_growup, center_x, center_y, scale, scale, 0, c_white, 1);
+	draw_surface_ext(surf_growup, pos_x, pos_y, scale, scale, 0, c_white, 1);
 }
 ///@description Chatterbox_Printing()
 ///@func Chatterbox_Printing
@@ -53,8 +65,10 @@ function Chatterbox_Printing(box){
 	// on affiche le contenu du .yarn 
 	if (draw_content)
 	{
+		
 		for (var i = 0; i < chatterbox_get_content_count(box); i++)
 		{
+			
 			if (room == rm_menu)
 			{
 				chatterbox_list[i].draw(center_text(chatterbox_list[i]), 180);
@@ -62,9 +76,41 @@ function Chatterbox_Printing(box){
 			else
 			{
 				//chatterbox_list[i].draw(64 + _outlineWidth, 256 + _outlineWidth);
-	
-				draw_test(64 + _outlineWidth, 256 + _outlineWidth, i)
+				if (instance_exists(oFace))
+				{
+					if (pos_x == 0 || pos_y == 0)
+					{
+						
+						pos_x = oFace.bbox_left;
+						pos_y = oFace.bbox_bottom;
+					}
+				}
+				else
+				{
+					if (pos_x == 0 || pos_y == 0)
+					{
+						pos_x = global.view_width/2;
+						pos_y = global.view_height;
+					}
+				}
+				var anchor_x, anchor_y;
+				if (instance_exists(oFace))
+				{
+					anchor_x = oFace.bbox_left;
+					anchor_y = oFace.bbox_bottom
+				}
+				else
+				{
+					anchor_x = global.view_width/2;
+					anchor_y = global.view_height;
+				}
+				draw_test(anchor_x, anchor_y, chatterbox_list[i])
 			}
+			
+		}
+		if (chatterbox_is_stopped(box) && scale >= 0.0001)
+		{
+				draw_surface_ext(surf_growup, pos_x, pos_y, scale, scale, 0, c_white, 1);
 		}
 	}
 	
@@ -73,7 +119,7 @@ function Chatterbox_Printing(box){
 	{
 		var _x = 80 + _outlineWidth;
 		var _y = 256 + _outlineWidth;
-		for (var i = 0; i < chatterbox_get_option_count(box); i++;)
+		for (var i = 0; i < chatterbox_get_option_count(box); i++)
 		{
 			chatterbox_option_list[i].draw(_x, _y);
 			if (slot == i) {draw_sprite(sprdialogue_cursor, 0, _x, _y + _outlineWidth)}

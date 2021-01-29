@@ -7,8 +7,8 @@
   "type": 1,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "audiogroup_default",
-    "path": "audiogroups/audiogroup_default",
+    "name": "audio_sfx",
+    "path": "audiogroups/audio_sfx",
   },
   "soundFile": "snd_heartbeat3.wav",
   "duration": 0.748479,

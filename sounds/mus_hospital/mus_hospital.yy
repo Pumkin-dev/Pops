@@ -1,5 +1,5 @@
 {
-  "compression": 3,
+  "compression": 1,
   "volume": 0.53,
   "preload": false,
   "bitRate": 128,
@@ -7,8 +7,8 @@
   "type": 0,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "audiogroup_default",
-    "path": "audiogroups/audiogroup_default",
+    "name": "audio_bgm",
+    "path": "audiogroups/audio_bgm",
   },
   "soundFile": "mus_hospital.mp3",
   "duration": 160.213959,

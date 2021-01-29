@@ -14,7 +14,7 @@ switch (state)
 
 if _f2{room_goto(_room)} 
 
-if (PRESSEDXKEY)
+if (PRESSEDXKEY && room != rm_menu)
 {
 	global.pause = !global.pause;
 	if global.pause

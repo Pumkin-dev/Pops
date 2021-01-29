@@ -1,10 +1,10 @@
 draw_set_font(ConfusedHeart);
-global.key_revert = ord("X");
+PRESSEDXKEY = ord("X");
 global.key_enter  = vk_enter;
-global.key_left   = vk_left;
-global.key_right  = vk_right;
-global.key_up     = vk_up;
-global.key_down   = vk_down;
+LEFTKEY   = vk_left;
+RIGHTKEY  = vk_right;
+UPKEY     = vk_up;
+DOWNKEY   = vk_down;
 
 display_set_gui_size(global.view_width, global.view_height);
 

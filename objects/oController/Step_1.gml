@@ -19,3 +19,5 @@ global.press_x_pressed = keyboard_check_pressed(ord("X"));
 
 global.press_up_pressed = keyboard_check_pressed(vk_up);
 global.press_down_pressed = keyboard_check_pressed(vk_down);
+global.press_right_pressed = keyboard_check_pressed(vk_right);
+global.press_left_pressed = keyboard_check_pressed(vk_left);

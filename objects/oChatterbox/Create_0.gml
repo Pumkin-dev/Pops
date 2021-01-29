@@ -41,3 +41,7 @@ surf_growup = surface_create(1, 1)
 previousWidth = 1;
 previousHeight = 1;
 scale = 0.0001;
+
+pos_x = global.view_width/2;
+pos_y = global.view_height;
+n = 0;

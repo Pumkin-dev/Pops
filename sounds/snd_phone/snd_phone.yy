@@ -7,8 +7,8 @@
   "type": 2,
   "bitDepth": 1,
   "audioGroupId": {
-    "name": "audiogroup_default",
-    "path": "audiogroups/audiogroup_default",
+    "name": "audio_sfx",
+    "path": "audiogroups/audio_sfx",
   },
   "soundFile": "snd_phone.wav",
   "duration": 28.4731045,

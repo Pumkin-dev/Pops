@@ -15,6 +15,8 @@ sound_door_played = false;
 #macro PRESSEDXKEY global.press_x_pressed
 #macro PRESSEDUPKEY global.press_up_pressed
 #macro PRESSEDDOWNKEY global.press_down_pressed
+#macro PRESSEDRIGHTKEY global.press_right_pressed
+#macro PRESSEDLEFTKEY global.press_left_pressed 
 
 
 globalvar pause;
@@ -43,3 +45,5 @@ scribble_typewriter_add_character_delay(".", 200);
 alarm[0] = 20;
 
 global.view_width = 640; global.view_height = 360;
+audio_group_load(audio_sfx);
+audio_group_load(audio_bgm);

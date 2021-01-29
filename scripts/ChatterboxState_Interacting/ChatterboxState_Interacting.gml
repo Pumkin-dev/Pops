@@ -7,6 +7,10 @@ function Chatterbox_Processing(box){
 	var _outlineWidth = 6;
 	var limit = sprite_get_width(sprTBox) - _outlineWidth;
 	_room = room_get_name(room);
+	if (oCutscene.scene == CUTSCENE.INTRO && room == rm_menu)
+	{
+		scale = 0.0001;
+	}
 	if (instance_exists(oPlayer))
 	{
 		_x = oPlayer.x;
@@ -16,7 +20,7 @@ function Chatterbox_Processing(box){
 	slot = Wrap(slot + vmove, 0, 1);
 	
 	// quand tous les dialogues ont défilé
-	if (chatterbox_is_stopped(box)) 
+	if (chatterbox_is_stopped(box) && scale <= 0.0001) 
 	{
 		state = CHATTERBOXSTATE.FREE;
 		surface_free(surf_growup);
@@ -72,7 +76,15 @@ function Chatterbox_Processing(box){
 		if (instance_exists(oBox)) { instance_destroy(oBox); }
 		speaker = undefined;
 		emotion = undefined;
+		pos_x = 0; pos_y = 0;
+		fading = false;
 		instance_destroy(oFace);
+		exit;
+	}
+	else if (chatterbox_is_stopped(box) && scale >= 0.0001) 
+	{
+		scale = lerp(scale, 0, 0.3);
+		draw_content = true;
 		exit;
 	}
 	
