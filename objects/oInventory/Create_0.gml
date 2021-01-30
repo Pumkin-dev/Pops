@@ -1,18 +1,18 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-global.item = ds_grid_create(4, 0);
+global.item = ds_list_create();
 
 enum item{
 	phone,
 	flashlight,
-	stick,
+	stick
 }
 enum slot{
 	name,
 	sprite,
 	description,
-	get,
+	get
 }
 
 create_item(item.phone, "Phone", undefined, "Your phone. How did it get here? It looks like it has been reset", false)

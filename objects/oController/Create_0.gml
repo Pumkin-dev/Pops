@@ -47,3 +47,4 @@ alarm[0] = 20;
 global.view_width = 640; global.view_height = 360;
 audio_group_load(audio_sfx);
 audio_group_load(audio_bgm);
+goto = undefined;

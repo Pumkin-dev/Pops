@@ -23,8 +23,9 @@ function Chatterbox_Processing(box){
 	if (chatterbox_is_stopped(box) && scale <= 0.0001) 
 	{
 		state = CHATTERBOXSTATE.FREE;
+		show_debug_message("true")
 		surface_free(surf_growup);
-		if (instance_exists(oPlayer))
+		if (instance_exists(oPlayer) && oController.goto == undefined)
 		{
 			oPlayer.state = PLAYERSTATE.FREE;
 		}
@@ -67,10 +68,6 @@ function Chatterbox_Processing(box){
 		if (oCutscene.scene != CUTSCENE.FREE && oCutscene.scene != CUTSCENE.INTRO)
 		{
 			oCutscene.scene = CUTSCENE.FREE;
-			if (instance_exists(oPlayer))
-			{
-				oPlayer.state = PLAYERSTATE.FREE;
-			}
 		}
 		
 		if (instance_exists(oBox)) { instance_destroy(oBox); }

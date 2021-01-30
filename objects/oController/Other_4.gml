@@ -12,17 +12,19 @@ switch (room)
 		room_goto(rm_menu);
 		break;
 	case rm_hos_chambre_pops:
+	case rm_hos_center:
+	case rm_hos_couloir:
+	case rm_hos_couloir_sortie:
+	case rm_hos_couloir1:
+	case rm_hos_couloir2:
+	case rm_hos_reception:
+	case rm_hos_staff_room:
 		light = true;
 		with (oPlayer) alarm[1] = 1;
 		break;
 	default:
 		
 		break;
-}
-
-if (light && !instance_exists(oLighting))
-{
-	instance_create_layer(x, y, "Lighting", oLighting);
 }
 
 if (room != rm_controller && room != rm_menu)

@@ -32,22 +32,8 @@ function draw_test(_x, _y, scribble_element){
 	surface_reset_target();
 		
 	scale = lerp(scale, 1, 0.1)
-	var center_x = width/2;
-	var center_y = height/2;
-	if (instance_exists(oFace))
-	{
-		_x -= width;
-		_y -= height;
-	}
-	else
-	{
-		_x -= center_x;
-		_y -= height + 32;
-	}
-	center_x = ceil(_x + center_x - (surface_get_width(surf_growup) * scale)/2);
-	center_y = ceil(_y + center_y - (surface_get_height(surf_growup) * scale)/2);
-	pos_x = lerp(pos_x, center_x, 0.4)
-	pos_y = lerp(pos_y, center_y, 0.4)
+	pos_x = lerp(pos_x, _x, 0.4)
+	pos_y = lerp(pos_y, _y, 0.4)
 		
 	draw_surface_ext(surf_growup, pos_x, pos_y, scale, scale, 0, c_white, 1);
 }
@@ -96,14 +82,13 @@ function Chatterbox_Printing(box){
 				var anchor_x, anchor_y;
 				if (instance_exists(oFace))
 				{
-					anchor_x = oFace.bbox_left;
-					anchor_y = oFace.bbox_bottom
+					with (oFace) anchor_x = bbox_left - surface_get_width(other.surf_growup);
 				}
 				else
 				{
-					anchor_x = global.view_width/2;
-					anchor_y = global.view_height;
+					anchor_x = global.view_width/2 - surface_get_width(surf_growup)/2;
 				}
+				anchor_y = 288 - surface_get_height(surf_growup)/2;
 				draw_test(anchor_x, anchor_y, chatterbox_list[i])
 			}
 			

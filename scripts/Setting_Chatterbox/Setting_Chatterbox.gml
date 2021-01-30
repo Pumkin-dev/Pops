@@ -2,6 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function Setting_Chatterbox(){
 	chatterbox_add_function("StopSound", stop_sound)
+	chatterbox_add_function("RoomGoTo", goTo_Room);
 	chatterbox_load_from_file("intro.yarn")
 	chatterbox_load_from_file("hbed.yarn")
 	chatterbox_load_from_file("staffdoor.yarn")

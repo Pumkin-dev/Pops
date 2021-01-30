@@ -6,10 +6,14 @@
 ///@param {string} description the description of the item
 ///@param {boolean} get does the player have it?
 function create_item(item, name, sprite, description, get){
-	if (ds_grid_height(ITEM) <= item) { ds_grid_resize(ITEM, 4, item + 1); }
+	var _map = ds_map_create();
 	
-	ds_grid_set(ITEM, slot.name, item, name);
-	ds_grid_set(ITEM, slot.sprite, item, sprite);
-	ds_grid_set(ITEM, slot.description, item, description);
-	ds_grid_set(ITEM, slot.get, item, get);
+	_map[? "item"] = item;
+	_map[? "name"] = name;
+	_map[? "sprite"] = sprite;
+	_map[? "description"] = description;
+	_map[? "get"] = get;
+	
+	ds_list_add(ITEM, _map)
+	ds_list_mark_as_map(ITEM, ds_list_size(ITEM) - 1);
 }

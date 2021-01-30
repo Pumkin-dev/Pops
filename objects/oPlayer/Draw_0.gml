@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-if (ITEM[# item.flashlight, 3])
+if (ITEM[| item.flashlight][? "get"])
 {
 	if (front)
 	{

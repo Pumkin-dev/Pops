@@ -12,7 +12,7 @@ position: 1391,-502
 title: PhoneRing
 tags: 
 colorID: 0
-position: 1511,-722
+position: 1217,-812
 ---
 Narrateur: A weird sound can be heard throughout the corridor.
 Pops: B-But it's my phone ring!
@@ -24,7 +24,110 @@ Pops: Maybe because nobody ever calls me...
 title: MysteriousCall0
 tags: 
 colorID: 0
-position: 1731,-722
+position: 1823,-593
 ---
-Empty Text
+Narrateur: Tu décroches le téléphone.
+Pops: ... [delay, 500]Allo-
+Phone Guy: Allo, Allooooooooooooooooooooooooooooooooooooooo !
+Phone Guy: Hé hoooooooooooooooo ?
+Phone Guy: Il y a quelqu'un au bout du fil ?
+Pops: Oui, je suis l-
+Phone Guy: Tu sais quand on t'appelle, il faut répondre ???
+Phone Guy: Si tu réponds au téléphone et que tu réponds pas, c'est problématique.
+Phone Guy: S'il y a personne, je vais devoir raccrocher !
+Phone Guy: Il y a un problème de réseau ou quoi ?
+Pops: Mais tu m'entends pas ? Je suis l-
+Phone Guy: MAIS TU VAS M'ENTENDRE, À LA FIN ???
+Pops: [scale, 0.5]oui je t'entends[/scale]
+Phone Guy: Ah bah, c'est pas trop tôt. 
+Phone Guy: Je commençais à croire que tu m'ignorais.
+Phone Guy: Tu sais, ça m'aurait beaucoup blessé...
+Pops: ... Vous êtes qui ?
+Phone Guy: Oh tu sais, pas la peine de me vouvoyer. Je suis pas si vieux que ça...
+[[Je recommence alors |WhoAreYou]]
+[[Pas si vieux ?|Old]]
+===
+title: Danger
+tags: 
+colorID: 0
+position: 1851,-942
+---
+Pops: Quoi ? Je suis en danger ?
+Phone Guy: Oui ? Je dirais.
+Phone Guy: Tu vois, tu as quelque chose de ... particulier.
+Phone Guy: Spécial.
+Phone Guy: Il se peut que les gens soient jaloux de ce truc particulier
+Phone Guy: Et essaie de te l'arracher.
+-> Quelque chose de particulier ?
+    Pops: Qu'est-ce que j'ai de particulier ?
+-> Des gens jaloux de moi ?
+    Pops: Enfin, y a pas de quoi à être jaloux de moi
+    Phone Guy: En temps normal, j'aurais été d'accord.
+    Pops: ...
+    Phone Guy: Mais là tu as quelque chose que tout le monde envie.
+Phone Guy: Ton âme
+Pops: Mon... Âme ?
+Phone Guy: OH MINCE J'AVAIS OUBLIÉ;
+Phone Guy: J'ai rien mangé ce soir !
+Phone Guy: Bon bah je vais commander une pizza je crois.
+Phone Guy: N'oublie pas, sois prudent
+Phone Guy: et NE T'APPROCHE DE PERSONNE.
+Phone Guy: Je te rappelle, je dois commander une pizza.
+Pops: Atten-
+Narrateur: Il a raccroché.
+===
+title: WhoAreYou
+tags: 
+colorID: 0
+position: 2175,-751
+---
+Pops: Je vais reformuler puisque tu insistes : t'es qui ?
+Phone Guy: Oh tu sais au final c'est pas important
+Pops: Comment ça c'est pas important ?
+Phone Guy: C'est pas important parce que je suis là pour t'aider
+Phone Guy: C'est ce qui importe, non ?
+Phone Guy: Tu as besoin d'aide non ?
+-> Comment vous savez ?
+    Pops: Comment vous savez que j'ai besoin d'aide ?
+    Phone Guy: RAAAAAAAAAAAAAAAAAAAAAAAAAAH.
+    Phone Guy: Qu'est-ce que j'ai dit ?
+    Phone Guy: Pas de vouvoiement, vilain !!!
+    Pops: ...
+    Phone Guy: Et puis arrête "comment" par-ci, "pouquoi" par-là.
+    Phone Guy: Ça n'avance à rien !
+    Phone Guy: L'important est que tu sortes de cet hôpital.
+-> Hmph. J'ai pas besoin d'aide...
+    Phone Guy: Mon bichon, t'as l'air bien perdu.
+    Phone Guy: J'ai l'impression que tu ne réalises pas la situation.
+    Phone Guy: Tu. es. en. danger.
+-> Il se pourrait que oui.
+    Pops: Dans la mesure où je suis tout seul dans un hôpital pas très actif
+    Pops: ... Et pas très accueillant.
+    Pops: Oui j'ai besoin d'aide.
+    Phone Guy: Ça tombe bien.
+    Phone Guy: Y a pas que l'hôpital qui est pas très accueillant
+[[Danger]]
+===
+title: Old
+tags: 
+colorID: 0
+position: 1516,-771
+---
+Pops: Pas si vieux c'est à dire ? T'as 40 ans ou quoi ?
+Phone Guy: Oh non quand même pas...
+Pops: Ah...
+Phone Guy: Bien plus.
+Pops: QUOI.
+Phone Guy : Enfin bref ce n'est pas si important que ça...
+-> Mais si c'est important, tu as quel âge ?
+    Phone Guy: Raaaaaaaaah mais tu vas me laisser finir.
+    Phone Guy: Tu. es. en. danger.
+-> Si c'est pas si important, qu'est-ce qui est important ?
+    Phone Guy: Ta survie
+-> Désolé mais je parle pas aux gens avec le double de mon âge
+    Pops: Surtout quand ils sont très insistant.
+    Pops: TRÈS. insistant.
+    Phone Guy: Très bien. Débrouille-toi sans l'aide du vieux très insistant.
+    Phone Guy: Dans un hôpital pas vraiment hospitalier.
+[[Danger]]
 ===

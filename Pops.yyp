@@ -1,6 +1,6 @@
 {
   "resources": [
-    {"id":{"name":"rm_staff_room","path":"rooms/rm_staff_room/rm_staff_room.yy",},"order":7,},
+    {"id":{"name":"rm_hos_staff_room","path":"rooms/rm_hos_staff_room/rm_hos_staff_room.yy",},"order":7,},
     {"id":{"name":"__scribble_class_null_element","path":"scripts/__scribble_class_null_element/__scribble_class_null_element.yy",},"order":4,},
     {"id":{"name":"Sprite48","path":"sprites/Sprite48/Sprite48.yy",},"order":15,},
     {"id":{"name":"sprPopsStandingUp","path":"sprites/sprPopsStandingUp/sprPopsStandingUp.yy",},"order":3,},
@@ -71,6 +71,7 @@
     {"id":{"name":"oCardiogramme","path":"objects/oCardiogramme/oCardiogramme.yy",},"order":8,},
     {"id":{"name":"chatterbox_fast_forward","path":"scripts/chatterbox_fast_forward/chatterbox_fast_forward.yy",},"order":1,},
     {"id":{"name":"chatterbox_is_loaded","path":"scripts/chatterbox_is_loaded/chatterbox_is_loaded.yy",},"order":2,},
+    {"id":{"name":"sprBookShelfwtphone","path":"sprites/sprBookShelfwtphone/sprBookShelfwtphone.yy",},"order":8,},
     {"id":{"name":"sprPopsFront","path":"sprites/sprPopsFront/sprPopsFront.yy",},"order":1,},
     {"id":{"name":"__scribble_config_colours","path":"scripts/__scribble_config_colours/__scribble_config_colours.yy",},"order":0,},
     {"id":{"name":"__chatterbox_class_source","path":"scripts/__chatterbox_class_source/__chatterbox_class_source.yy",},"order":4,},
@@ -194,6 +195,7 @@
     {"id":{"name":"snd_footsteps_hos_4","path":"sounds/snd_footsteps_hos_4/snd_footsteps_hos_4.yy",},"order":4,},
     {"id":{"name":"MSDF_Guide","path":"notes/MSDF_Guide/MSDF_Guide.yy",},"order":7,},
     {"id":{"name":"oFadinginWhite","path":"objects/oFadinginWhite/oFadinginWhite.yy",},"order":17,},
+    {"id":{"name":"goTo_Room","path":"scripts/goTo_Room/goTo_Room.yy",},"order":49,},
     {"id":{"name":"scribble_typewriter_add_event","path":"scripts/scribble_typewriter_add_event/scribble_typewriter_add_event.yy",},"order":3,},
     {"id":{"name":"Cutscene_ACall","path":"scripts/Cutscene_ACall/Cutscene_ACall.yy",},"order":1,},
     {"id":{"name":"__scribble_class_font","path":"scripts/__scribble_class_font/__scribble_class_font.yy",},"order":1,},
@@ -271,7 +273,7 @@
     {"roomId":{"name":"rm_hos_reception","path":"rooms/rm_hos_reception/rm_hos_reception.yy",},},
     {"roomId":{"name":"rm_hos_couloir2","path":"rooms/rm_hos_couloir2/rm_hos_couloir2.yy",},},
     {"roomId":{"name":"rm_hos_couloir_sortie","path":"rooms/rm_hos_couloir_sortie/rm_hos_couloir_sortie.yy",},},
-    {"roomId":{"name":"rm_staff_room","path":"rooms/rm_staff_room/rm_staff_room.yy",},},
+    {"roomId":{"name":"rm_hos_staff_room","path":"rooms/rm_hos_staff_room/rm_hos_staff_room.yy",},},
     {"roomId":{"name":"rm_hos_patient_room","path":"rooms/rm_hos_patient_room/rm_hos_patient_room.yy",},},
   ],
   "Folders": [
@@ -347,6 +349,7 @@
     {"CopyToMask":-1,"filePath":"datafiles/Yarn - Copie","resourceVersion":"1.0","name":"intro.yarn","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/Yarn - Copie","resourceVersion":"1.0","name":"staffdoor.yarn","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/Yarn - Copie","resourceVersion":"1.0","name":"test.yarn","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/Yarn","resourceVersion":"1.0","name":"cardiogram.yarn","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
     "IDEVersion": "2.3.1.542",

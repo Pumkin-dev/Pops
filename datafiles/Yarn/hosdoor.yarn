@@ -23,5 +23,11 @@ Narrateur: A sign is hanged on the door.
     Narrateur: "N°101."
 << elseif local._room == "rm_hos_couloir" && local._x > 400>> 
     Narrateur: "N°102."
+    <<if visited("phone_guy.yarn:PhoneRing") == true>>
+        Narrateur: La sonnerie de téléphone provient de cette chambre.
+        Narrateur: Veux-tu y entrer ?
+        -> Oui
+            <<RoomGoTo "rm_hos_patient_room" 254 416>>
+        -> Non
 << endif>>
 ===

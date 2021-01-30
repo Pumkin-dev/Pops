@@ -1,6 +1,6 @@
 /// @description Insérez la description ici
 // Vous pouvez écrire votre code dans cet éditeur
-if (global.pause)
+if (global.pause|| !oController.light)
 {
 	exit;
 }
@@ -40,7 +40,7 @@ else
 	{
 		flicker_light = false;
 	}
-	if (!flicker_light && ITEM[# item.flashlight, slot.get])
+	if (!flicker_light && ITEM[| item.flashlight][? "get"])
 	{
 		FlashLight();
 	}
