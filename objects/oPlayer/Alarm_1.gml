@@ -1,22 +1,21 @@
 /// @description Insérez la description ici
 // Vous pouvez écrire votre code dans cet éditeur
-if (!walk)
+if (charaState != CHARASTATE.WALKING)
 {
-	if (right)
+	switch (charaDirection)
 	{
-		flight_x = 49;
-	}
-	else if (left)
-	{
-		flight_x = 0;
-	}
-	else if (back)
-	{
-		flight_x = 25;
-	}
-	else if (front)
-	{
-		flight_x = 4;
+		case CHARADIRECTION.RIGHT:
+			flight_x = 49;
+			break;
+		case CHARADIRECTION.LEFT:
+			flight_x = 0;
+			break;
+		case CHARADIRECTION.BACK:
+			flight_x = 25;
+			break;
+		case CHARADIRECTION.FRONT:
+			flight_x = 4;
+			break;
 	}
 
 	switch (floor(image_index))
@@ -36,21 +35,20 @@ if (!walk)
 }
 else
 {
-	if (right)
+	switch (charaDirection)
 	{
-		flight_x = 49;
-	}
-	else if (left)
-	{
-		flight_x = 0;
-	}
-	else if (back)
-	{
-		flight_x = 25;
-	}
-	else if (front)
-	{
-		flight_x = 4;
+		case CHARADIRECTION.RIGHT:
+			flight_x = 49;
+			break;
+		case CHARADIRECTION.LEFT:
+			flight_x = 0;
+			break;
+		case CHARADIRECTION.BACK:
+			flight_x = 25;
+			break;
+		case CHARADIRECTION.FRONT:
+			flight_x = 4;
+			break;
 	}
 	switch (floor(image_index))
 	{

@@ -76,7 +76,7 @@
     "eventStubScript": null,
     "parent": {"name":"sprPopsLeft","path":"sprites/sprPopsLeft/sprPopsLeft.yy",},
     "resourceVersion": "1.3",
-    "name": "",
+    "name": "sprPopsLeft",
     "tags": [],
     "resourceType": "GMSequence",
   },

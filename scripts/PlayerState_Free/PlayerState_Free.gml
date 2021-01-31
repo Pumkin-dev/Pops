@@ -11,24 +11,24 @@ function PlayerState_Free(){
 		/// Détermination de l'orientation du sprite
 		if (hmove != 0 || vmove != 0)
 		{
-			walk = true
+			charaState = CHARASTATE.WALKING
 		}
 		else
 		{
-			walk = false;
+			charaState = CHARASTATE.IDLE;
 		}
-		if (walk)
+		if (charaState == CHARASTATE.WALKING)
 		{
 			// Si le perso va vers le bas qu'il y a un mouvement horizontale
 			if (vmove == 1 && hmove != 0)
 			{
 				// on active seulement le sprite de face
-				SetDirection("front");
+				charaDirection = CHARADIRECTION.FRONT;
 			};
 			// De même vers le haut
 			else if (vmove == -1 && hmove != 0)
 			{
-				SetDirection("back");
+				charaDirection = CHARADIRECTION.BACK;
 			};
 			// Sinon s'il n'y a seulement qu'un mouvement dans un axe
 			else
@@ -39,21 +39,21 @@ function PlayerState_Free(){
 					// Si vers le bas
 					case 1:
 						// on active de face
-						SetDirection("front")
+						charaDirection = CHARADIRECTION.FRONT
 						break;
 					// De même ici
 					case -1:
-						SetDirection("back")
+						charaDirection = CHARADIRECTION.BACK;
 						break;
 				};
 				// De même horizontalement
 				switch (hmove)
 				{
 					case 1:
-						SetDirection("right")
+						charaDirection = CHARADIRECTION.RIGHT;
 						break;
 					case -1:
-						SetDirection("left")
+						charaDirection = CHARADIRECTION.LEFT;
 						break;
 				};
 			};
@@ -144,7 +144,7 @@ function PlayerState_Free(){
 			state = PLAYERSTATE.WARPING;
 		}
 
-		if (walk)
+		if (charaState == CHARASTATE.WALKING)
 		{
 			switch (floor(image_index))
 			{

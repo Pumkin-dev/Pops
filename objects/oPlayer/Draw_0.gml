@@ -6,20 +6,19 @@ event_inherited();
 
 if (ITEM[| item.flashlight][? "get"])
 {
-	if (front)
+	switch (charaDirection)
 	{
-		angle = 270;
-	}
-	else if (right)
-	{
-		angle = 0;
-	}
-	else if (back)
-	{
-		angle = 90;
-	}
-	else if (left)
-	{
-		angle = 180;
+		case CHARADIRECTION.FRONT:
+			angle = 270;
+			break;
+		case CHARADIRECTION.RIGHT:
+			angle = 0;
+			break;
+		case CHARADIRECTION.BACK:
+			angle = 90;
+			break;
+		case CHARADIRECTION.LEFT:
+			angle = 180;
+			break;
 	}
 }

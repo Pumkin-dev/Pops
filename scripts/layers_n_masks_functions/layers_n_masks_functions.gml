@@ -1,13 +1,12 @@
 function WichLayer(object) {
 		
-	var yreal, center;
+	var center;
 
 	with (object)
 	{
 		if (object_index != oWall)
 		{
-			yreal = y - sprite_yoffset;
-			center = yreal + sprite_height/2;
+			center = (bbox_top + bbox_bottom)/2; 
 			if (layer != layer_get_id("Walls"))
 			{
 				if (other.y <= center)

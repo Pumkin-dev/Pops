@@ -159,10 +159,7 @@ function ControllerState_Warping(){
 			// on stocke les directions du joueur dans le contrôleur
 			with (oPlayer)
 			{
-				other.ctrller_front = front;
-				other.ctrller_back = back;
-				other.ctrller_right = right;
-				other.ctrller_left = left;
+				other.controllerDirection = charaDirection
 			}
 		}
 		change_rooms = false;

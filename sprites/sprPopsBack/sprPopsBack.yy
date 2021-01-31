@@ -76,7 +76,7 @@
     "eventStubScript": null,
     "parent": {"name":"sprPopsBack","path":"sprites/sprPopsBack/sprPopsBack.yy",},
     "resourceVersion": "1.3",
-    "name": "",
+    "name": "sprPopsBack",
     "tags": [],
     "resourceType": "GMSequence",
   },

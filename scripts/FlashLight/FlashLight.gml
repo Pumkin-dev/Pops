@@ -5,22 +5,20 @@ function FlashLight(){
 	HaloLight();	
 	with (oPlayer)
 	{
-		if (right)
+		switch (charaDirection)
 		{
-			draw_sprite_ext(sprFLight, 1, x - sprite_xoffset + flight_x , y - sprite_yoffset + flight_y, scale_flight, 1, 0, c_white, 1);
-			
-		}
-		else if (back)
-		{
-			draw_sprite_ext(sprFLight, 1, x - sprite_xoffset + flight_x , y - sprite_yoffset + flight_y, 1, scale_flight, 90, c_white, 1);
-		}
-		else if (left)
-		{
-			draw_sprite_ext(sprFLight, 1, x - sprite_xoffset + flight_x , y - sprite_yoffset + flight_y, scale_flight, 1, 180, c_white, 1);
-		}
-		else if (front)
-		{
-			draw_sprite_ext(sprFLight, 1, x - sprite_xoffset + flight_x , y - sprite_yoffset + flight_y, 1, scale_flight, 270, c_white, 1);
+			case CHARADIRECTION.RIGHT:
+				draw_sprite_ext(sprFLight, 1, x - sprite_xoffset + flight_x , y - sprite_yoffset + flight_y, scale_flight, 1, 0, c_white, 1);
+				break;
+			case CHARADIRECTION.BACK:
+				draw_sprite_ext(sprFLight, 1, x - sprite_xoffset + flight_x , y - sprite_yoffset + flight_y, 1, scale_flight, 90, c_white, 1);
+				break;			
+			case CHARADIRECTION.LEFT:
+				draw_sprite_ext(sprFLight, 1, x - sprite_xoffset + flight_x , y - sprite_yoffset + flight_y, scale_flight, 1, 180, c_white, 1);
+				break;
+			case CHARADIRECTION.FRONT:
+				draw_sprite_ext(sprFLight, 1, x - sprite_xoffset + flight_x , y - sprite_yoffset + flight_y, 1, scale_flight, 270, c_white, 1);
+				break;
 		}
 	}
 	gpu_set_blendmode(bm_normal);

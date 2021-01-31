@@ -15,10 +15,7 @@ alarm[2] = 20;
 state = PLAYERSTATE.WARPING;
 with (oController)
 {
-	other.front = ctrller_front;
-	other.back = ctrller_back;
-	other.right = ctrller_right;
-	other.left = ctrller_left;
+	other.charaDirection = controllerDirection;
 }
 
 enum PLAYERSTATE{

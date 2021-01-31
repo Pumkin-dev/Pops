@@ -4,13 +4,21 @@ event_inherited();
 hspd = 0;
 vspd = 0;
 
-front = true;
-right = false;
-back = false;
-left = false;
-walk = false;
-
-
 
 spr_cycle = 0;
-warp = false;
+
+charaState = CHARASTATE.IDLE;
+charaDirection = CHARADIRECTION.FRONT;
+
+enum CHARASTATE{
+	IDLE,
+	WALKING,
+	RUNNING
+}
+
+enum CHARADIRECTION{
+	RIGHT,
+	LEFT,
+	FRONT,
+	BACK
+}

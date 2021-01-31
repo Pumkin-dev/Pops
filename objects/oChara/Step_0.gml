@@ -6,167 +6,91 @@ event_inherited();
 
 if (oCutscene.scene != CUTSCENE.INTRO)
 {
-	// Si on ne marche pas
-	if (!walk)
+	switch (charaState)
 	{
-		if (front && spr_cycle < 3)
-		{
-		
-			if (ITEM[| item.flashlight][? "get"] )
+		case CHARASTATE.IDLE:
+			switch (spr_cycle)
 			{
-				sprite_index = spr_front_flight;
+				case 0:
+				case 1:
+				case 2:
+					switch (charaDirection)
+					{
+						case CHARADIRECTION.FRONT:
+							sprite_index = spr_front;
+							break;
+						case CHARADIRECTION.BACK:
+							sprite_index = spr_back;
+							break;
+						case CHARADIRECTION.RIGHT:
+							sprite_index = spr_right;
+							break;
+						case CHARADIRECTION.LEFT:
+							sprite_index = spr_left;
+							break;
+					}
+					break;
+				case 3:
+					switch (charaDirection)
+					{
+						case CHARADIRECTION.FRONT:
+							sprite_index = spr_front_wink;
+							break;
+						case CHARADIRECTION.BACK:
+							sprite_index = spr_back;
+							break;
+						case CHARADIRECTION.RIGHT:
+							sprite_index = spr_right_wink;
+							break;
+						case CHARADIRECTION.LEFT:
+							sprite_index = spr_left_wink;
+							break;
+					}
+					break;
 			}
-			else
+			break;
+		case CHARASTATE.WALKING:
+			switch (spr_cycle)
 			{
-				sprite_index = spr_front;
+				case 0:
+				case 1:
+				case 2:
+					switch (charaDirection)
+					{
+						case CHARADIRECTION.FRONT:
+							sprite_index = spr_front_walk;
+							break;
+						case CHARADIRECTION.BACK:
+							sprite_index = spr_back_walk;
+							break;
+						case CHARADIRECTION.RIGHT:
+							sprite_index = spr_right_walk;
+							break;
+						case CHARADIRECTION.LEFT:
+							sprite_index = spr_left_walk;
+							break;
+					}
+					break;
+				case 3:
+					switch (charaDirection)
+					{
+						case CHARADIRECTION.FRONT:
+							sprite_index = spr_front_walk_wink;
+							break;
+						case CHARADIRECTION.BACK:
+							sprite_index = spr_back_walk;
+							break;
+						case CHARADIRECTION.RIGHT:
+							sprite_index = spr_right_walk_wink;
+							break;
+						case CHARADIRECTION.LEFT:
+							sprite_index = spr_left_walk_wink;
+							break;
+					}
+					break;
 			}
-		}
-		else if (front && spr_cycle == 3)
-		{
-			if (ITEM[| item.flashlight][? "get"] )
-			{
-				sprite_index = spr_front_wink_flight;
-			}
-			else
-			{
-				sprite_index = spr_front_wink;
-			}
-		}
-		else if (back)
-		{
-			if (ITEM[| item.flashlight][? "get"] )
-			{
-				sprite_index = spr_back_flight;
-			}
-			else
-			{
-				sprite_index = spr_back;
-			}
-		}
-		else if (left && spr_cycle < 3)
-		{
-			if (ITEM[| item.flashlight][? "get"] )
-			{
-				sprite_index = spr_left_flight;
-			}
-			else
-			{
-				sprite_index = spr_left;
-			}
-		}
-		else if (left && spr_cycle == 3)
-		{
-			if (ITEM[| item.flashlight][? "get"] )
-			{
-				sprite_index = spr_left_wink_flight;
-			}
-			else
-			{
-				sprite_index = spr_left_wink;
-			}
-		}
-		else if (right && spr_cycle < 3)
-		{
-			if (ITEM[| item.flashlight][? "get"] )
-			{
-				sprite_index = spr_right_flight;
-			}
-			else
-			{
-				sprite_index = spr_right;
-			}
-		}
-		else if (right && spr_cycle == 3)
-		{
-			if (ITEM[| item.flashlight][? "get"] )
-			{
-				sprite_index = spr_right_wink_flight
-			}
-			else
-			{
-				sprite_index = spr_right_wink;
-			}
-		}
+			break
 	}
-	// Sinon si on marche
-	else
-	{
-		if (front && spr_cycle < 3)
-		{
-			if (ITEM[| item.flashlight][? "get"] )
-			{
-				sprite_index = spr_front_walk_flight;
-			}
-			else
-			{
-				sprite_index = spr_front_walk;
-			}
-		}
-		else if (front && spr_cycle == 3)
-		{
-			if (ITEM[| item.flashlight][? "get"] )
-			{
-				sprite_index = spr_front_walk_wink_flight;
-			}
-			else
-			{
-				sprite_index = spr_front_walk_wink;
-			}
-		}
-		else if (back)
-		{
-			if (ITEM[| item.flashlight][? "get"])
-			{
-				sprite_index = spr_back_walk_flight;
-			}
-			else
-			{
-				sprite_index = spr_back_walk;
-			}
-		}
-		else if (left && spr_cycle < 3)
-		{
-			if (ITEM[| item.flashlight][? "get"] )
-			{
-				sprite_index = spr_left_walk_flight;
-			}
-			else
-			{
-				sprite_index = spr_left_walk;
-			}
-		}
-		else if (left && spr_cycle == 3)
-		{
-			if (ITEM[| item.flashlight][? "get"] )
-			{
-				sprite_index = spr_left_walk_wink_flight;
-			}
-			else
-			{
-				sprite_index = spr_left_walk_wink;
-			}
-		}
-		else if (right && spr_cycle < 3)
-		{
-			if (ITEM[| item.flashlight][? "get"] )
-			{
-				sprite_index = spr_right_walk_flight;
-			}
-			else
-			{
-				sprite_index = spr_right_walk;
-			}
-		}
-		else if (right && spr_cycle == 3)
-		{
-			if (ITEM[| item.flashlight][? "get"] )
-			{
-				sprite_index = spr_right_walk_wink_flight;
-			}
-			else
-			{
-				sprite_index = spr_right_walk_wink;
-			}
-		}
-	}
+					
+						
 }

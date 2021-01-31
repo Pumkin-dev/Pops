@@ -112,6 +112,7 @@ function Chatterbox_Processing(box){
 		{
 			chatterbox_option_list[i] = scribble(chatterbox_get_option(box, i));
 			chatterbox_option_list[i].typewriter_in(1, 0);
+			chatterbox_option_list[i].align(fa_center, fa_middle);
 		}
 		scribble_done_option = true;
 	}

@@ -25,10 +25,7 @@ state = CONTROLLERSTATE.WARPING
 warp_x = 96;
 warp_y = 160;
 
-ctrller_front = true;
-ctrller_back = false;
-ctrller_right = false;
-ctrller_left = false;
+controllerDirection = CONTROLLERDIRECION.FRONT
 
 fadingin = false;
 fadingout = true;
@@ -36,6 +33,13 @@ fading = false;
 change_rooms = false
 light = false;
 launching_game = false;
+
+enum CONTROLLERDIRECION{
+	FRONT,
+	BACK,
+	RIGHT,
+	LEFT
+}
 
 enum CONTROLLERSTATE{
 	FREE,

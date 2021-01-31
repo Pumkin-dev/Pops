@@ -8,15 +8,19 @@ function Setting_Chatterbox(){
 	chatterbox_load_from_file("staffdoor.yarn")
 	chatterbox_load_from_file("phone_guy.yarn")
 	chatterbox_load_from_file("hosdoor.yarn")
+	chatterbox_load_from_file("cardiogram.yarn");
+	chatterbox_load_from_file("caca.yarn");
+	caca_box = chatterbox_create("caca.yarn")
 	intro_box = chatterbox_create("intro.yarn")
 	hbed_box = chatterbox_create("hbed.yarn")
 	staffdoor_box = chatterbox_create("staffdoor.yarn")
 	hosdoor_box = chatterbox_create("hosdoor.yarn");
 	phone_guy_box = chatterbox_create("phone_guy.yarn");
+	cardiogram_box = chatterbox_create("cardiogram.yarn")
 
-	list = [hbed_box, staffdoor_box, hosdoor_box, intro_box, phone_guy_box];
+	list = [hbed_box, staffdoor_box, hosdoor_box, intro_box, phone_guy_box, cardiogram_box, caca_box];
 	
-	for (var i = 0; i < array_length_1d(list); i++)
+	for (var i = 0; i < array_length(list); i++)
 	{
 		switch (LANG)
 		{

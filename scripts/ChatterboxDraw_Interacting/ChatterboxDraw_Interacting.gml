@@ -102,13 +102,21 @@ function Chatterbox_Printing(box){
 	// s'il y a une question on affiche les réponses
 	if (!chatterbox_is_waiting(box) && scribble_done_option && draw_options)
 	{
-		var _x = 80 + _outlineWidth;
-		var _y = 256 + _outlineWidth;
+		var lty, y_buffer;
+		y_buffer = 64;
+		var _x = global.view_width/2;
+		var _y = global.view_height/2;
+		if (chatterbox_get_option_count(box) > 1) { _y -= ((chatterbox_get_content_count(box) - 1)/2)*y_buffer; }
 		for (var i = 0; i < chatterbox_get_option_count(box); i++)
 		{
-			chatterbox_option_list[i].draw(_x, _y);
+			lty = _y + (y_buffer*i)
+			var bbox = chatterbox_option_list[i].get_bbox(_x, lty);
+			draw_nineslice(sprBox, variable_instance_get(bbox, "x0") - string_width("M"), variable_instance_get(bbox, "y0") - string_height("M")/4, variable_instance_get(bbox, "x3") + string_width("M"), variable_instance_get(bbox, "y3") + string_height("M")/4);
+			chatterbox_option_list[i].draw(_x, lty);
+			
+			
 			if (slot == i) {draw_sprite(sprdialogue_cursor, 0, _x, _y + _outlineWidth)}
-			_y += 36;
+			;
 		}
 	}
 }
