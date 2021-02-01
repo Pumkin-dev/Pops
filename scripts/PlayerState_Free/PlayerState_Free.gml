@@ -77,7 +77,7 @@ function PlayerState_Free(){
 				x = x - x%32 - (bbox_left - x)
 			}
 				
-			if (x == xprevious && vspd == 0) {walk = false}
+			if (x == xprevious && vspd == 0) {charaState = CHARASTATE.IDLE}
 			hspd = 0;
 		}
 		
@@ -90,7 +90,7 @@ function PlayerState_Free(){
 			{
 				y = y - y%32 + 31 - (bbox_bottom - y);
 			}
-			if (y == yprevious && hspd == 0) {walk = false}
+			if (y == yprevious && hspd == 0) {charaState = CHARASTATE.IDLE}
 			vspd = 0;
 		}
 		

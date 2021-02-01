@@ -76,7 +76,7 @@
     "eventStubScript": null,
     "parent": {"name":"sprPopsFrontWink","path":"sprites/sprPopsFrontWink/sprPopsFrontWink.yy",},
     "resourceVersion": "1.3",
-    "name": "",
+    "name": "sprPopsFrontWink",
     "tags": [],
     "resourceType": "GMSequence",
   },

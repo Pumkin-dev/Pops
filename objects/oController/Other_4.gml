@@ -3,6 +3,18 @@
 draw_flush();
 
 tilemap = layer_tilemap_get_id("Collision");
+switch (room)
+{
+	case rm_hos_couloir:
+	case rm_hos_patient_room:
+		break;
+	default:
+		if (audio_is_playing(snd_phone))
+		{
+			audio_stop_sound(snd_phone);
+		}
+		break;
+}
 
 switch (room)
 {

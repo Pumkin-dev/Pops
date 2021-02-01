@@ -6,91 +6,182 @@ event_inherited();
 
 if (oCutscene.scene != CUTSCENE.INTRO)
 {
-	switch (charaState)
+	switch (clothes)
 	{
-		case CHARASTATE.IDLE:
-			switch (spr_cycle)
+		case CLOTHING.NORMAL:
+			switch (charaState)
 			{
-				case 0:
-				case 1:
-				case 2:
-					switch (charaDirection)
+				case CHARASTATE.IDLE:
+					switch (spr_cycle)
 					{
-						case CHARADIRECTION.FRONT:
-							sprite_index = spr_front;
+						case 0:
+						case 1:
+						case 2:
+							switch (charaDirection)
+							{
+								case CHARADIRECTION.FRONT:
+									sprite_index = spr_front;
+									break;
+								case CHARADIRECTION.BACK:
+									sprite_index = spr_back;
+									break;
+								case CHARADIRECTION.RIGHT:
+									sprite_index = spr_right;
+									break;
+								case CHARADIRECTION.LEFT:
+									sprite_index = spr_left;
+									break;
+							}
 							break;
-						case CHARADIRECTION.BACK:
-							sprite_index = spr_back;
-							break;
-						case CHARADIRECTION.RIGHT:
-							sprite_index = spr_right;
-							break;
-						case CHARADIRECTION.LEFT:
-							sprite_index = spr_left;
+						case 3:
+							switch (charaDirection)
+							{
+								case CHARADIRECTION.FRONT:
+									sprite_index = spr_front_wink;
+									break;
+								case CHARADIRECTION.BACK:
+									sprite_index = spr_back;
+									break;
+								case CHARADIRECTION.RIGHT:
+									sprite_index = spr_right_wink;
+									break;
+								case CHARADIRECTION.LEFT:
+									sprite_index = spr_left_wink;
+									break;
+							}
 							break;
 					}
 					break;
-				case 3:
-					switch (charaDirection)
+				case CHARASTATE.WALKING:
+					switch (spr_cycle)
 					{
-						case CHARADIRECTION.FRONT:
-							sprite_index = spr_front_wink;
+						case 0:
+						case 1:
+						case 2:
+							switch (charaDirection)
+							{
+								case CHARADIRECTION.FRONT:
+									sprite_index = spr_front_walk;
+									break;
+								case CHARADIRECTION.BACK:
+									sprite_index = spr_back_walk;
+									break;
+								case CHARADIRECTION.RIGHT:
+									sprite_index = spr_right_walk;
+									break;
+								case CHARADIRECTION.LEFT:
+									sprite_index = spr_left_walk;
+									break;
+							}
 							break;
-						case CHARADIRECTION.BACK:
-							sprite_index = spr_back;
-							break;
-						case CHARADIRECTION.RIGHT:
-							sprite_index = spr_right_wink;
-							break;
-						case CHARADIRECTION.LEFT:
-							sprite_index = spr_left_wink;
+						case 3:
+							switch (charaDirection)
+							{
+								case CHARADIRECTION.FRONT:
+									sprite_index = spr_front_walk_wink;
+									break;
+								case CHARADIRECTION.BACK:
+									sprite_index = spr_back_walk;
+									break;
+								case CHARADIRECTION.RIGHT:
+									sprite_index = spr_right_walk_wink;
+									break;
+								case CHARADIRECTION.LEFT:
+									sprite_index = spr_left_walk_wink;
+									break;
+							}
 							break;
 					}
-					break;
+					break
 			}
 			break;
-		case CHARASTATE.WALKING:
-			switch (spr_cycle)
+		case CLOTHING.HOSPITAL:
+			switch (charaState)
 			{
-				case 0:
-				case 1:
-				case 2:
-					switch (charaDirection)
+				case CHARASTATE.IDLE:
+					switch (spr_cycle)
 					{
-						case CHARADIRECTION.FRONT:
-							sprite_index = spr_front_walk;
+						case 0:
+						case 1:
+						case 2:
+							switch (charaDirection)
+							{
+								case CHARADIRECTION.FRONT:
+									sprite_index = spr_front_hos;
+									break;
+								case CHARADIRECTION.BACK:
+									sprite_index = spr_back_hos;
+									break;
+								case CHARADIRECTION.RIGHT:
+									sprite_index = spr_right_hos;
+									break;
+								case CHARADIRECTION.LEFT:
+									sprite_index = spr_left_hos;
+									break;
+							}
 							break;
-						case CHARADIRECTION.BACK:
-							sprite_index = spr_back_walk;
-							break;
-						case CHARADIRECTION.RIGHT:
-							sprite_index = spr_right_walk;
-							break;
-						case CHARADIRECTION.LEFT:
-							sprite_index = spr_left_walk;
+						case 3:
+							switch (charaDirection)
+							{
+								case CHARADIRECTION.FRONT:
+									sprite_index = spr_front_hos_wink;
+									break;
+								case CHARADIRECTION.BACK:
+									sprite_index = spr_back_hos;
+									break;
+								case CHARADIRECTION.RIGHT:
+									sprite_index = spr_right_hos_wink;
+									break;
+								case CHARADIRECTION.LEFT:
+									sprite_index = spr_left_hos_wink;
+									break;
+							}
 							break;
 					}
 					break;
-				case 3:
-					switch (charaDirection)
+				case CHARASTATE.WALKING:
+					switch (spr_cycle)
 					{
-						case CHARADIRECTION.FRONT:
-							sprite_index = spr_front_walk_wink;
+						case 0:
+						case 1:
+						case 2:
+							switch (charaDirection)
+							{
+								case CHARADIRECTION.FRONT:
+									sprite_index = spr_front_hos_walk;
+									break;
+								case CHARADIRECTION.BACK:
+									sprite_index = spr_back_hos_walk;
+									break;
+								case CHARADIRECTION.RIGHT:
+									sprite_index = spr_right_hos_walk;
+									break;
+								case CHARADIRECTION.LEFT:
+									sprite_index = spr_left_hos_walk;
+									break;
+							}
 							break;
-						case CHARADIRECTION.BACK:
-							sprite_index = spr_back_walk;
-							break;
-						case CHARADIRECTION.RIGHT:
-							sprite_index = spr_right_walk_wink;
-							break;
-						case CHARADIRECTION.LEFT:
-							sprite_index = spr_left_walk_wink;
+						case 3:
+							switch (charaDirection)
+							{
+								case CHARADIRECTION.FRONT:
+									sprite_index = spr_front_hos_walk_wink;
+									break;
+								case CHARADIRECTION.BACK:
+									sprite_index = spr_back_hos_walk;
+									break;
+								case CHARADIRECTION.RIGHT:
+									sprite_index = spr_right_hos_walk_wink;
+									break;
+								case CHARADIRECTION.LEFT:
+									sprite_index = spr_left_hos_walk_wink;
+									break;
+							}
 							break;
 					}
-					break;
+					break
 			}
-			break
-	}
+			break;
 					
-						
+	}
 }

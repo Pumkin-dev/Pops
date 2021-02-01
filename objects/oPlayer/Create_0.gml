@@ -25,4 +25,10 @@ enum PLAYERSTATE{
 	CUTSCENE
 }
 
+enum CLOTHING{
+	NORMAL,
+	HOSPITAL
+}
+clothes = CLOTHING.HOSPITAL
+
 audio_listener_orientation(0, 1000, 0, 0, 0, 1);
