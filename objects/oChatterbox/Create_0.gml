@@ -4,9 +4,7 @@
 scribble_font_add("ConfusedHeart", "font/ConfusedHeart.yy");
 scribble_done = false;
 scribble_done_option = false;
-draw_options = false;
-draw_content = true;
-slot = 0;
+chat_slot = 0;
 
 chatterbox_list = undefined;
 chatterbox_option_list = undefined;
@@ -16,6 +14,10 @@ state = CHATTERBOXSTATE.FREE;
 draw = CHATTERBOXDRAW.FREE;
 speaker = undefined;
 emotion = undefined;
+_item = undefined;
+checksprite = false;
+
+scribble_typewriter_add_event("Skip", scribble_continue)
 
 enum CHATTERBOXSTATE{
 	FREE,
@@ -44,4 +46,3 @@ scale = 0.0001;
 
 pos_x = global.view_width/2;
 pos_y = global.view_height;
-n = 0;

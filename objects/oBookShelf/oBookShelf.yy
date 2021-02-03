@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprBookShelf",
-    "path": "sprites/sprBookShelf/sprBookShelf.yy",
+    "name": "sprBookShelfwtphone",
+    "path": "sprites/sprBookShelfwtphone/sprBookShelfwtphone.yy",
   },
   "solid": false,
   "visible": true,
@@ -23,7 +23,9 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"oBookShelf","path":"objects/oBookShelf/oBookShelf.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {

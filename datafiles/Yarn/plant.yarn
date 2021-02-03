@@ -1,0 +1,40 @@
+title: Start
+tags: 
+colorID: 0
+position: 1441,-452
+---
+Narrateur: A pretty green plant.
+Narrateur: It seems to ease patients.
+<<CheckItem item.stick>>
+<<if !local.item>>
+    Narrateur: It looks like you can tear off a stick to the plant.
+    Narrateur: Do you want to do it ?
+    -> Yes
+        Narrateur: You grab delicately a stck from the pland
+        Narrateur: Then snatch it off brutally.
+        <<GiveItem item.stick>>
+        Narrateur: You've got a stick.
+    -> No
+        Narrateur: You decide to let this poor plant be.
+<<endif>>
+===
+title: Debut
+tags: 
+colorID: 0
+position: 1657,-371
+---
+Narrateur: Une jolie plante verte
+Narrateur: Cela semble apaiser les patients
+<<CheckItem item.stick>>
+<<if !local.item>>
+    Narrateur: Il semble que tu puisses arracher une branche à la plante.
+    Narrateur: Veux-tu arracher une branche ?
+    -> Oui
+        Narrateur: Tu attrapes délicatement l'une des branches de la plante
+        Narrateur: Puis l'amputes brutalement.
+        <<GiveItem item.stick>>
+        Narrateur: Tu as obtenu une branche.
+    -> Non
+        Narrateur: Tu décides de laisser cette pauvre plante tranquille.
+<<endif>>
+===

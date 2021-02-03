@@ -7,6 +7,8 @@ function Chatterbox_Processing(box){
 	var _outlineWidth = 6;
 	var limit = sprite_get_width(sprTBox) - _outlineWidth;
 	_room = room_get_name(room);
+	if (audio_is_playing(snd_phone)) { _sound = true; }
+	else { _sound = false; } 
 	if (oCutscene.scene == CUTSCENE.INTRO && room == rm_menu)
 	{
 		scale = 0.0001;
@@ -15,15 +17,11 @@ function Chatterbox_Processing(box){
 	{
 		_x = oPlayer.x;
 	}
-	
-	var vmove = PRESSEDUPKEY - PRESSEDDOWNKEY; 
-	slot = Wrap(slot + vmove, 0, 1);
-	
+
 	// quand tous les dialogues ont défilé
 	if (chatterbox_is_stopped(box) && scale <= 0.0001) 
 	{
 		state = CHATTERBOXSTATE.FREE;
-		show_debug_message("true")
 		surface_free(surf_growup);
 		if (instance_exists(oPlayer) && oController.goto == undefined)
 		{
@@ -81,7 +79,6 @@ function Chatterbox_Processing(box){
 	else if (chatterbox_is_stopped(box) && scale >= 0.0001) 
 	{
 		scale = lerp(scale, 0, 0.3);
-		draw_content = true;
 		exit;
 	}
 	
@@ -97,14 +94,23 @@ function Chatterbox_Processing(box){
 			{
 				case "Pops":
 					limit -= sprite_get_width(sprFacePopsNeutral);
+					chatterbox_list[i].typewriter_sound(snd_pops_talk, 80, 0.99, 1.01);
+					break;
+				case "Phone Guy":
+					chatterbox_list[i].typewriter_sound(snd_phone_guy, 100, 0.99, 1.01)
+					break;
+				case "Narrateur":
+				default:
+					chatterbox_list[i].typewriter_sound(snd_narrateur, 80, 1, 1);
 					break;
 			}
-			chatterbox_list[i].wrap(limit);
-			chatterbox_list[i].typewriter_sound(snd_narrateur, 80, 1, 1)
+			if (room != rm_menu)
+			{
+				chatterbox_list[i].wrap(limit);
+			}
 			chatterbox_list[i].typewriter_in(1, 0);
 		}
 		scribble_done = true;
-		draw_content = true;
 	}
 	if (!chatterbox_is_waiting(box) && !scribble_done_option)
 	{
@@ -135,7 +141,7 @@ function Chatterbox_Processing(box){
 				else
 				{
 					// sinon on force l'arrêt de l'effet
-					chatterbox_list[i] = chatterbox_list[i].typewriter_skip();
+					chatterbox_list[i].typewriter_skip();
 				}
 			}
 			// si le déclencheur est activé
@@ -160,38 +166,24 @@ function Chatterbox_Processing(box){
 	}
 	else
 	{
+		var vmove = PRESSEDDOWNKEY - PRESSEDUPKEY; 
+		var nb_option = chatterbox_get_option_count(box) -1
+		chat_slot = Wrap(chat_slot + vmove, 0, nb_option);
 		
 		if (PRESSEDZKEY)
 		{
-			for (var i = 0; i < chatterbox_get_content_count(box); i++)
+			for (var i = 0; i < chatterbox_get_option_count(box); i++)
 			{
-				
-				if (chatterbox_list[i].get_typewriter_state() < 1 && draw_content)
+				if (chatterbox_option_list[i].get_typewriter_state() < 1)
 				{
-					chatterbox_list[i].typewriter_skip();
-				}
-				else if (chatterbox_list[i] >= 1 && draw_content)
-				{
-					draw_options = true;
-					draw_content = false;
+					chatterbox_option_list[i].typewriter_skip();
 				}
 				else
 				{
-					for (var i = 0; i < chatterbox_get_option_count(box); i++)
-					{
-						if (chatterbox_option_list[i].get_typewriter_state() < 1)
-						{
-							chatterbox_option_list[i].typewriter_skip();
-						}
-						else
-						{
-							chatterbox_select(box, slot);
-							scribble_done = false;
-							draw_options = false;
-							scribble_done_option = false;
-							chatterbox_option_list[i].flush();
-					    }
-					}
+					chatterbox_select(box, chat_slot);
+					scribble_done = false;
+					scribble_done_option = false;
+					chatterbox_option_list[i].flush();
 				}
 			}
 		}		
@@ -222,4 +214,5 @@ function ChatterboxState_Interacting(){
 	{
 		box = undefined;
 	}
+	show_debug_message(chatterbox_is_waiting(box))
 }

@@ -7,6 +7,13 @@ switch (room)
 {
 	case rm_hos_couloir:
 	case rm_hos_patient_room:
+		with (oBookShelf)
+		{
+			if (audio_is_playing(snd_phone))
+			{
+				audio_emitter_position(oCutscene.phone_emit, x + 27, y + 9, 0);
+			}
+		}
 		break;
 	default:
 		if (audio_is_playing(snd_phone))

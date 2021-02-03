@@ -3,7 +3,7 @@ tags:
 colorID: 0
 position: 1541,-192
 ---
-Narrateur: Pops, I know this isn't going good lately.
+Narrateur: Pops, I know things haven't been going well lately.
 <<set local.zoom_width to global.view_width/2>> 
 <<set local.zoom_height to global.view_height/2>> 
 <<set local.zoom to 0.001>> 
@@ -11,7 +11,7 @@ Narrateur: But you are starting to making me worry.
 Narrateur: You are more withdrawn than before.
 Narrateur: Will you, one day, stop brooding?
 Narrateur: Will you, one day, dream?
-Narrateur: Will you, one day, [delay, 500]love... ?
+Narrateur: Will you, one day, [delay, 500]love?
 <<set local.offset to 1>>
 <<set local.fxspeed to 1>> 
 <<set local._speed to 1.5>>
@@ -21,12 +21,12 @@ Narrateur: Will you, one day, [delay, 500]love... ?
 Narrateur: [shake]Pops, are you sleeping?[/shake]
 <<set local.offset to 3>>
 <<set local.fxspeed to 3>>
-Narrateur: [shake]I am boring you, aren't I?[/shake]
+Narrateur: [shake]I'm boring you, aren't I?[/shake]
 <<set local.offset to 7>>
 <<set local.fxspeed to 7>>
 <<set local._speed to 2>>
 <<set local._pitch to 3>> 
-Narrateur: [shake]Pops, do you hear me?[/shake]
+Narrateur: [shake]Pops, can your hear me?[/shake]
 <<set local.offset to 9>>
 <<set local.fxspeed to 9>>
 Narrateur: [shake]Pops![/shake]
@@ -93,9 +93,9 @@ Narrateur: Pops, je sais que ça ne va pas fort dernièrement.
 <<set local.zoom to 0.001>> 
 Narrateur: Mais tu commence à m'inquiéter.
 Narrateur: Tu es plus renfermé qu'avant.
-Narrateur: Est-ce qu'un jour, tu arrêteras de broyer du noir ?
+Narrateur: Est-ce qu'un jour, tu arrêteras de broyer du noir [nbs]?
 Narrateur: Est-ce qu'un jour, tu rêveras ?
-Narrateur: Est-ce qu'un jour, tu[delay, 500]aimeras... ?
+Narrateur: Est-ce qu'un jour, tu[delay, 500] aimeras... ?
 <<set local.offset to 1>>
 <<set local.fxspeed to 1>> 
 <<set local._speed to 1.5>>
@@ -142,5 +142,5 @@ position: 2241,-467
 Pops: ... Quelle étrange rêve.
 Pops: J'avais l'impression de...
 Pops: Hein ? C'est bizarre.
-Pops: Je ne me rappelle pas avoir éteint la lumière. Text
+Pops: Je ne me rappelle pas avoir éteint la lumière.
 ===

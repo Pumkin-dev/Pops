@@ -27,7 +27,7 @@ function draw_test(_x, _y, scribble_element){
 	}
 	surface_set_target(surf_growup);
 		
-	draw_nineslice(sprBox, 0,  0, previousWidth, previousHeight);
+	draw_nineslice(sprBox, 0,  0, previousWidth, previousHeight, c_white);
 	scribble_element.draw(string_width("M"), string_height("M")/2);
 	surface_reset_target();
 		
@@ -41,66 +41,58 @@ function draw_test(_x, _y, scribble_element){
 ///@func Chatterbox_Printing
 ///@param box file yarn read
 function Chatterbox_Printing(box){
-	var _outlineWidth = 6;
-	/*
-	if (room != rm_menu)
-	{
-		draw_sprite(sprTBox, 0, 64, 256);
-	}
-	*/
 	// on affiche le contenu du .yarn 
-	if (draw_content)
-	{
+
 		
-		for (var i = 0; i < chatterbox_get_content_count(box); i++)
-		{
+	for (var i = 0; i < chatterbox_get_content_count(box); i++)
+	{
 			
-			if (room == rm_menu)
+		if (room == rm_menu)
+		{
+			chatterbox_list[i].draw(center_text(chatterbox_list[i]), 180);
+		}
+		else
+		{
+			//chatterbox_list[i].draw(64 + _outlineWidth, 256 + _outlineWidth);
+			if (instance_exists(oFace))
 			{
-				chatterbox_list[i].draw(center_text(chatterbox_list[i]), 180);
+				if (pos_x == 0 || pos_y == 0)
+				{
+						
+					pos_x = oFace.bbox_left;
+					pos_y = oFace.bbox_bottom;
+				}
 			}
 			else
 			{
-				//chatterbox_list[i].draw(64 + _outlineWidth, 256 + _outlineWidth);
-				if (instance_exists(oFace))
+				if (pos_x == 0 || pos_y == 0)
 				{
-					if (pos_x == 0 || pos_y == 0)
-					{
-						
-						pos_x = oFace.bbox_left;
-						pos_y = oFace.bbox_bottom;
-					}
+					pos_x = global.view_width/2;
+					pos_y = global.view_height;
 				}
-				else
-				{
-					if (pos_x == 0 || pos_y == 0)
-					{
-						pos_x = global.view_width/2;
-						pos_y = global.view_height;
-					}
-				}
-				var anchor_x, anchor_y;
-				if (instance_exists(oFace))
-				{
-					with (oFace) anchor_x = bbox_left - surface_get_width(other.surf_growup);
-				}
-				else
-				{
-					anchor_x = global.view_width/2 - surface_get_width(surf_growup)/2;
-				}
-				anchor_y = 288 - surface_get_height(surf_growup)/2;
-				draw_test(anchor_x, anchor_y, chatterbox_list[i])
 			}
+			var anchor_x, anchor_y;
+			if (instance_exists(oFace))
+			{
+				with (oFace) anchor_x = bbox_left - surface_get_width(other.surf_growup);
+			}
+			else
+			{
+				anchor_x = global.view_width/2 - surface_get_width(surf_growup)/2;
+			}
+			anchor_y = 288 - surface_get_height(surf_growup)/2;
+			draw_test(anchor_x, anchor_y, chatterbox_list[i])
+		}
 			
-		}
-		if (chatterbox_is_stopped(box) && scale >= 0.0001)
-		{
-				draw_surface_ext(surf_growup, pos_x, pos_y, scale, scale, 0, c_white, 1);
-		}
+	}
+	if (chatterbox_is_stopped(box) && scale >= 0.0001)
+	{
+			draw_surface_ext(surf_growup, pos_x, pos_y, scale, scale, 0, c_white, 1);
 	}
 	
+	
 	// s'il y a une question on affiche les réponses
-	if (!chatterbox_is_waiting(box) && scribble_done_option && draw_options)
+	if (!chatterbox_is_waiting(box) && scribble_done_option)
 	{
 		var lty, y_buffer;
 		y_buffer = 64;
@@ -110,13 +102,12 @@ function Chatterbox_Printing(box){
 		for (var i = 0; i < chatterbox_get_option_count(box); i++)
 		{
 			lty = _y + (y_buffer*i)
+			var c = c_white;
 			var bbox = chatterbox_option_list[i].get_bbox(_x, lty);
-			draw_nineslice(sprBox, variable_instance_get(bbox, "x0") - string_width("M"), variable_instance_get(bbox, "y0") - string_height("M")/4, variable_instance_get(bbox, "x3") + string_width("M"), variable_instance_get(bbox, "y3") + string_height("M")/4);
+			if (chat_slot == i) { c = c_yellow; }
+			draw_nineslice(sprBox, variable_instance_get(bbox, "x0") - string_width("M"), variable_instance_get(bbox, "y0") - string_height("M")/4, variable_instance_get(bbox, "x3") + string_width("M"), variable_instance_get(bbox, "y3") + string_height("M")/4, c);
 			chatterbox_option_list[i].draw(_x, lty);
 			
-			
-			if (slot == i) {draw_sprite(sprdialogue_cursor, 0, _x, _y + _outlineWidth)}
-			;
 		}
 	}
 }

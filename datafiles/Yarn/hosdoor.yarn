@@ -1,33 +1,32 @@
-title: Debut
+title: Start
 tags: 
 colorID: 0
 position: 1593,-140
 ---
-Narrateur: Tu essaies d'ouvrir la porte sans succès.
-Narrateur: Un panneau est accroché à la porte.
-Narrateur: "N°101".
-<< if local._room == "rm_hos_couloir" & local._x <= 400>> 
-    Narrateur: "N°101".
-<< elseif local._room == "rm_hos_couloir" & local._x >= 400>> 
-    Narrateur: "N°102".
-<< endif>>
+Narrateur: A door for a patient room
+<<if visited("phone_guy.yarn:PhoneRing") == true>>
+    <<if local._room == "rm_hos_couloir" && local._x > 400>> 
+        Narrateur: The phone ring come from this room.
+        Narrateur: Do you want to get in?
+        -> Yes
+            <<RoomGoTo "rm_hos_patient_room" 254 416>>
+        -> No
+    <<endif>>
+<<endif>>
 ===
-title: Start
+title: Debut
 tags: 
 colorID: 0
-position: 1871,-158
+position: 1870,-158
 ---
-Narrateur: You try to open the door without success.
-Narrateur: A sign is hanged on the door.
-<< if local._room == "rm_hos_couloir" && local._x < 400>> 
-    Narrateur: "N°101."
-<< elseif local._room == "rm_hos_couloir" && local._x > 400>> 
-    Narrateur: "N°102."
-    <<if visited("phone_guy.yarn:PhoneRing") == true>>
+Narrateur: Une porte menant à une chambre de patient.
+<<if visited("phone_guy.yarn:PhoneRing") == true>>
+    <<if local._room == "rm_hos_couloir" && local._x > 400>> 
         Narrateur: La sonnerie de téléphone provient de cette chambre.
         Narrateur: Veux-tu y entrer ?
         -> Oui
             <<RoomGoTo "rm_hos_patient_room" 254 416>>
         -> Non
-<< endif>>
+    <<endif>>
+<<endif>>
 ===

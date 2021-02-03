@@ -107,7 +107,7 @@ function PlayerState_Free(){
 	
 			// Puis on bloque les déplacements horizontales
 			hspd = 0;
-			if (vmove == 0) {walk = false};
+			if (vmove == 0) {charaState = CHARASTATE.IDLE};
 		}
 		// Puis on incrémente à x s'il y a déplacement ou collisions
 
@@ -122,7 +122,7 @@ function PlayerState_Free(){
 			};
 	
 			vspd = 0;
-			if (hmove == 0) {walk = false};
+			if (hmove == 0) {charaState = CHARASTATE.IDLE};
 		}
 
 		// de même

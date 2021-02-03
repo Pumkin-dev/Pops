@@ -5,5 +5,7 @@
 event_inherited();
 
 spr_neutral = sprFacePopsNeutral;
+spr_neutral_wink = sprFacePopsNeutralWink
+spr_neutral_talk = sprFacePopsNeutralTalk;
 spr_happy = sprFacePopsHappy;
 spr_doubt = sprFacePopsDubitatif;

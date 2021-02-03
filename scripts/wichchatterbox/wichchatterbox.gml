@@ -19,6 +19,12 @@ function wichchatterbox(obj)
 		case oCardiogramme:
 			_box = cardiogram_box;
 			break;
+		case oBookShelf:
+			_box = bookshelf_box;
+			break;
+		case oPlant:
+			_box = plant_box;
+			break;
 		default:
 			_box = undefined;
 			break;

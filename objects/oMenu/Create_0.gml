@@ -6,6 +6,7 @@ enum menu_page {
 	 main,
 	 settings,
 	 audio,
+	 language,
 	 difficulty,
 	 graphics,
 	 controls,
@@ -47,6 +48,7 @@ ds_menu_main = create_menu_page(
 
 ds_settings = create_menu_page(
     ["Audio",       menu_element_type.page_transfert,   menu_page.audio],
+	["Langugage",	menu_element_type.page_transfert,	menu_page.language],
 	["Difficulty",  menu_element_type.page_transfert,   menu_page.difficulty],
 	["Graphics",    menu_element_type.page_transfert,   menu_page.graphics],
 	["Controls",    menu_element_type.page_transfert,   menu_page.controls],
@@ -58,6 +60,11 @@ ds_menu_audio = create_menu_page(
    ["Sound",        menu_element_type.slider,          change_volume,         1,   [0,1]],
    ["Music",	    menu_element_type.slider,          change_volume,         1,   [0,1]],
    ["Back",		    menu_element_type.page_transfert,   menu_page.settings],
+);
+
+ds_menu_language = create_menu_page(
+   ["Language",		menu_element_type.shift,	change_language, 0, ["English", "French"]],
+   ["Back", menu_element_type.page_transfert, menu_page.settings]
 );
 
 ds_menu_difficulty = create_menu_page(
@@ -81,7 +88,7 @@ ds_menu_controls = create_menu_page(
 );
 
 page = 0;
-menu_pages = [ds_menu_main, ds_settings, ds_menu_audio, ds_menu_difficulty, ds_menu_graphics, ds_menu_controls]
+menu_pages = [ds_menu_main, ds_settings, ds_menu_audio, ds_menu_language, ds_menu_difficulty, ds_menu_graphics, ds_menu_controls]
 
 var i = 0, array_len = array_length(menu_pages);
 repeat(array_len){

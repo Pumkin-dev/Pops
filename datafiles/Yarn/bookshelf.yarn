@@ -1,0 +1,48 @@
+title: Start
+tags: 
+colorID: 0
+position: 1483,-324
+---
+Narrateur: A bookshelf well provided.
+<<CheckSprite "oBookShelf" "sprBookShelf">>
+<<if local.checksprite>>
+    Narrateur: You can see your phone above it.
+    Narrateur: Unfortunately, you are too small to grab it.
+    <<CheckItem item.stick>>
+    <<if !local._item>>
+        Narrateur: If only you had a long-enough item...
+    <<else>>
+        Narrateur: You pull out your stick then hit the phone to make it fall.
+        Narrateur: After some trials, the phone falls
+        Narrateur: You pick the phone
+        <<GiveItem item.phone>>
+        <<BoxGoTo "phone_guy_box">>
+    <<endif>>
+<<else>>
+    Narrateur: You'd want to read a book?
+<<endif>>
+===
+title: Debut
+tags: 
+colorID: 0
+position: 1733,-266
+---
+Narrateur: Une bibliothèque très fourni
+<<CheckSprite "oBookShelf" "sprBookShelf">>
+<<if local.checksprite>>
+    Narrateur: Tu peux apercevoir ton téléphone au dessus de la bibliothèque.
+    Narrateur: Malheureusement, tu es trop petit pour l'attraper.
+    <<CheckItem item.stick>>
+    <<if !local._item>>
+        Narrateur: Si seulement tu avais un objet assez long...
+    <<else>>
+        Narrateur: Tu sors ta branche puis tapote le téléphone pour le faire tomber
+        Narrateur: Au bout de plusieurs essais, tu réussis à le faire chuter
+        Narrateur: Tu ramasses le téléphone
+        <<GiveItem item.phone>>
+        <<BoxGoTo "phone_guy_box">>
+    <<endif>>
+<<else>>
+    Narrateur: Tu voudrais lire un livre ?
+<<endif>>
+===
