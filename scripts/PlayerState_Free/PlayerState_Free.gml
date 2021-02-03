@@ -62,38 +62,24 @@ function PlayerState_Free(){
 		// Cela permet d'adapter les directions avec la vitesse de marche
 		hspd = hmove * walkspd;
 		vspd = vmove * walkspd;
-		var bbox_side;
-		if (hspd > 0) {bbox_side = bbox_right};
-		else {bbox_side = bbox_left};
+		if (hspd > 0)
+		{
+			var bbox_side = bbox_right;
+		}
+		else { bbox_side = bbox_left; }
 
-		if (tilemap_get_at_pixel(oController.tilemap, bbox_side + hspd, bbox_top) || tilemap_get_at_pixel(oController.tilemap, bbox_side + hspd , bbox_bottom ))
+		
+		if (tilemap_get_at_pixel(oController.tilemap, bbox_side + hspd, bbox_top) || tilemap_get_at_pixel(oController.tilemap, bbox_side + vspd, bbox_bottom))
 		{
 			if (hspd > 0)
 			{
 				x = x - x%32 + 31 - (bbox_right - x);
 			}
-			else
-			{
-				x = x - x%32 - (bbox_left - x)
-			}
-				
-			if (x == xprevious && vspd == 0) {charaState = CHARASTATE.IDLE}
+			else { x = x - x%32 - (bbox_left - x); }
+			// Puis on bloque les déplacements horizontales
 			hspd = 0;
+			if (vmove == 0) {charaState = CHARASTATE.IDLE};
 		}
-		
-		if (vspd > 0) {bbox_side = bbox_bottom};
-		else {bbox_side = bbox_top};
-		
-		if (tilemap_get_at_pixel(oController.tilemap, bbox_left, bbox_side + vspd) || tilemap_get_at_pixel(oController.tilemap, bbox_right, bbox_side + vspd))
-		{
-			if (vspd > 0)
-			{
-				y = y - y%32 + 31 - (bbox_bottom - y);
-			}
-			if (y == yprevious && hspd == 0) {charaState = CHARASTATE.IDLE}
-			vspd = 0;
-		}
-		
 
 		// Si le perso est proche d'un meuble
 		if (place_meeting(x + hspd, y, oEntity))
@@ -112,6 +98,22 @@ function PlayerState_Free(){
 		// Puis on incrémente à x s'il y a déplacement ou collisions
 
 		x += hspd;
+		
+		if (vspd > 0) { bbox_side = bbox_bottom; }
+		else { bbox_side = bbox_top; }
+		
+		if (tilemap_get_at_pixel(oController.tilemap, bbox_right,  bbox_side + vspd) || tilemap_get_at_pixel(oController.tilemap, bbox_left,  bbox_side + vspd))
+		{
+			if (vspd > 0)
+			{
+				y = y - y%32 + 31 - (bbox_bottom - y);
+			}
+			else { y = y + (32 - y%32) - (bbox_top - y); }
+			// Puis on bloque les déplacements horizontales
+			vspd = 0;
+			if (hmove == 0) {charaState = CHARASTATE.IDLE};
+		}
+		
 
 		// de même verticalement
 		if (place_meeting(x, y + vspd, oEntity))
@@ -122,7 +124,7 @@ function PlayerState_Free(){
 			};
 	
 			vspd = 0;
-			if (hmove == 0) {charaState = CHARASTATE.IDLE};
+			if (hmove == 0) { charaState = CHARASTATE.IDLE };
 		}
 
 		// de même

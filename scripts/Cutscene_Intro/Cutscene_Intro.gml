@@ -56,6 +56,7 @@ function Cutscene_Intro(){
 							state = PLAYERSTATE.FREE
 							x = x - sprite_xoffset + 42; y = y - sprite_yoffset + 60;
 							oChatterbox.obj_zoom = oPlayer;
+							ds_list_add(oCutscene.scene_visited, CUTSCENE.INTRO);
 						}
 					}
 					break;

@@ -20,6 +20,7 @@ Pops: Why is my phone here?
 Pops: ...
 Pops: And why did I never realize how ridiculous this ring is...
 Pops: Maybe because nobody ever calls me...
+<<EndScene "ACall">>
 ===
 title: MysteriousCall0
 tags: 
@@ -154,7 +155,7 @@ position: 724,-357
 title: Sonnerie
 tags: 
 colorID: 0
-position: 479,-677
+position: 477,-678
 ---
 Narrateur: Un bruit étrange peut être entendu à travers le hall
 Pops: Mai-Mais c'est ma sonnerie de téléphone !
@@ -162,6 +163,7 @@ Pops: Pourquoi mon téléphone est ici ?
 Pops: ...
 Pops: Et pourquoi je n'ai jamais réalisé que cette sonnerie est ridicule...
 Pops: Sûrement parce que jamais personne ne m'appelle...
+<<EndScene "ACall">>
 ===
 title: MysterieuxAppel0
 tags: 

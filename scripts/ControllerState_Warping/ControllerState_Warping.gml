@@ -91,6 +91,11 @@ function ControllerState_Warping(){
 							room_goto(rm_hos_center);
 						}
 						break;
+					case rm_hos_patient_room:
+						warp_x = 478;
+						warp_y = 512;
+						room_goto(rm_hos_couloir);
+						break;
 					case rm_hos_center:
 						if (oPlayer.x <= 500 && oPlayer.y > 100)
 						{

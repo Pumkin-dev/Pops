@@ -95,7 +95,7 @@ Narrateur: Mais tu commence à m'inquiéter.
 Narrateur: Tu es plus renfermé qu'avant.
 Narrateur: Est-ce qu'un jour, tu arrêteras de broyer du noir [nbs]?
 Narrateur: Est-ce qu'un jour, tu rêveras ?
-Narrateur: Est-ce qu'un jour, tu[delay, 500] aimeras... ?
+Narrateur: Est-ce qu'un jour, tu[delay, 500] aimeras?
 <<set local.offset to 1>>
 <<set local.fxspeed to 1>> 
 <<set local._speed to 1.5>>

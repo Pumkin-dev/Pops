@@ -25,6 +25,9 @@ function wichchatterbox(obj)
 		case oPlant:
 			_box = plant_box;
 			break;
+		case oHFrontBed:
+			_box = hfrontbed_box;
+			break;
 		default:
 			_box = undefined;
 			break;

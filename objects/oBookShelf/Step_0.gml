@@ -4,5 +4,5 @@
 // Inherit the parent event
 event_inherited();
 
-if (ITEM[| item.flashlight][? "get"]){ sprite_index = sprBookShelfwtphone; }
+if (ITEM[| item.phone][? "get"]){ sprite_index = sprBookShelfwtphone; }
 else { sprite_index = sprBookShelf; }

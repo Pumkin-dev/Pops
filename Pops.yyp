@@ -26,6 +26,7 @@
     {"id":{"name":"shWhite","path":"shaders/shWhite/shWhite.yy",},"order":0,},
     {"id":{"name":"HaloLight","path":"scripts/HaloLight/HaloLight.yy",},"order":21,},
     {"id":{"name":"rm_hos_center","path":"rooms/rm_hos_center/rm_hos_center.yy",},"order":2,},
+    {"id":{"name":"create_scene","path":"scripts/create_scene/create_scene.yy",},"order":56,},
     {"id":{"name":"chatterbox_get_content_count","path":"scripts/chatterbox_get_content_count/chatterbox_get_content_count.yy",},"order":1,},
     {"id":{"name":"launch_game","path":"scripts/launch_game/launch_game.yy",},"order":7,},
     {"id":{"name":"scribble_font_combine","path":"scripts/scribble_font_combine/scribble_font_combine.yy",},"order":2,},
@@ -190,6 +191,7 @@
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"order":0,},
     {"id":{"name":"GiveItem","path":"scripts/GiveItem/GiveItem.yy",},"order":50,},
     {"id":{"name":"CheckItem","path":"scripts/CheckItem/CheckItem.yy",},"order":51,},
+    {"id":{"name":"EndScene","path":"scripts/EndScene/EndScene.yy",},"order":55,},
     {"id":{"name":"stop_sound","path":"scripts/stop_sound/stop_sound.yy",},"order":45,},
     {"id":{"name":"rm_hos_couloir2","path":"rooms/rm_hos_couloir2/rm_hos_couloir2.yy",},"order":5,},
     {"id":{"name":"sprPlant","path":"sprites/sprPlant/sprPlant.yy",},"order":5,},
@@ -375,6 +377,7 @@
     {"CopyToMask":-1,"filePath":"datafiles/Yarn","resourceVersion":"1.0","name":"caca.yarn","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/Yarn","resourceVersion":"1.0","name":"bookshelf.yarn","resourceType":"GMIncludedFile",},
     {"CopyToMask":-1,"filePath":"datafiles/Yarn","resourceVersion":"1.0","name":"plant.yarn","resourceType":"GMIncludedFile",},
+    {"CopyToMask":-1,"filePath":"datafiles/Yarn","resourceVersion":"1.0","name":"hfrontbed.yarn","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
     "IDEVersion": "2.3.1.542",

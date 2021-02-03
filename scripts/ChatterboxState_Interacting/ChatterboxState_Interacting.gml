@@ -214,5 +214,4 @@ function ChatterboxState_Interacting(){
 	{
 		box = undefined;
 	}
-	show_debug_message(chatterbox_is_waiting(box))
 }

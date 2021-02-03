@@ -14,6 +14,21 @@ switch (room)
 				audio_emitter_position(oCutscene.phone_emit, x + 27, y + 9, 0);
 			}
 		}
+		with (oHosDoor)
+		{
+			var visited = false;
+			var i = 0; repeat (ds_list_size(oCutscene.scene_visited))
+			{
+				var _scene = oCutscene.scene_visited[| i];
+				if ( _scene[? "cutscene" == CUTSCENE.ACALL]) { visited = true}
+				i++;
+			}
+			if (visited && !audio_is_playing(snd_phone) && x > 400)
+			{
+				audio_emitter_position(oCutscene.phone_emit, x + sprite_width/2, y + sprite_height/2, 0);
+				audio_play_sound_on(oCutscene.phone_emit, snd_phone, true, false);
+			}
+		}
 		break;
 	default:
 		if (audio_is_playing(snd_phone))

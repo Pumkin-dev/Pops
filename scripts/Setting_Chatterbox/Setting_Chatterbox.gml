@@ -11,6 +11,7 @@ function Setting_Chatterbox(){
 			chatterbox_add_function("CheckItem", CheckItem);
 			chatterbox_add_function("CheckSprite", CheckSprite);
 			chatterbox_add_function("BoxGoTo", goTo_Box);
+			chatterbox_add_function("EndScene", EndScene);
 			chatterbox_load_from_file("intro.yarn")
 			chatterbox_load_from_file("hbed.yarn")
 			chatterbox_load_from_file("staffdoor.yarn")
@@ -19,6 +20,7 @@ function Setting_Chatterbox(){
 			chatterbox_load_from_file("cardiogram.yarn");
 			chatterbox_load_from_file("bookshelf.yarn");
 			chatterbox_load_from_file("plant.yarn");
+			chatterbox_load_from_file("hfrontbed.yarn")
 			intro_box = chatterbox_create("intro.yarn")
 			hbed_box = chatterbox_create("hbed.yarn")
 			staffdoor_box = chatterbox_create("staffdoor.yarn")
@@ -27,10 +29,11 @@ function Setting_Chatterbox(){
 			cardiogram_box = chatterbox_create("cardiogram.yarn");
 			bookshelf_box = chatterbox_create("bookshelf.yarn");
 			plant_box = chatterbox_create("plant.yarn");
+			hfrontbed_box = chatterbox_create("hfrontbed.yarn")
 		}
 
 		list = [hbed_box, staffdoor_box, hosdoor_box, intro_box, phone_guy_box, cardiogram_box,
-		bookshelf_box, plant_box];
+		bookshelf_box, plant_box, hfrontbed_box];
 	
 		for (var i = 0; i < array_length(list); i++)
 		{
