@@ -60,7 +60,7 @@
     "eventStubScript": null,
     "parent": {"name":"sprite147","path":"sprites/sprite147/sprite147.yy",},
     "resourceVersion": "1.3",
-    "name": "sprite147",
+    "name": "",
     "tags": [],
     "resourceType": "GMSequence",
   },

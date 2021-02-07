@@ -1,4 +1,4 @@
-///@description create menu_page
+///@description create_menu_page
 ///@arg ["NAME1",type1,entries1...]
 ///@arg ["NAME2",type2,entreies2...]
 function create_menu_page(){
